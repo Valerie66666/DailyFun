@@ -3,11 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RoThGo — lines, idioms, tunes, and motion</title>
-    <meta
-      name="description"
-      content="RoThGo is a small cabinet of humorous lines, idioms, original browser tunes, and a dish of restless marbles."
-    />
     <meta name="theme-color" content="#f3ecdf" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,44 +15,14 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23ffd84d' stroke='%231c1915' stroke-width='4'/%3E%3Ccircle cx='24' cy='28' r='3.2' fill='%231c1915'/%3E%3Ccircle cx='40' cy='28' r='3.2' fill='%231c1915'/%3E%3Cpath d='M22 38c4 8 16 8 20 0' fill='none' stroke='%231c1915' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"
     />
+    <title>RoThGo</title>
+    <meta name="description" content="RoThGo is a small home for humors, idioms, tunes, stories, and motion." />
   </head>
   <body>
-    <a class="skip" href="#lines">Skip to the lines</a>
-    <header class="site-header" id="top">
-      <a class="brand" href="#top">RoThGo</a>
-      <nav class="nav" aria-label="Sections">
-        <a href="#lines">Lines</a>
-        <a href="#idioms">Idioms</a>
-        <a href="#tunes">Tunes</a>
-        <a href="#motion">Motion</a>
-      </nav>
-    </header>
-
-    <main>
-      <noscript>
-        <p class="noscript wrap">
-          JavaScript is off, so the jukebox and the marble dish will sit quietly. The lines and idioms below are still here.
-        </p>
-      </noscript>
-
-      <section class="hero wrap">
-        <div class="hero__copy">
-          <p class="pill">Open late · no tickets required</p>
-          <h1 class="wordmark" aria-label="RoThGo">
-            <span>R</span><span>o</span><span>T</span><span>h</span><span>G</span><span>o</span>
-          </h1>
-          <p class="lede">
-            A pocket cabinet of humorous lines, idioms, tiny tunes, and things that refuse to sit still.
-          </p>
-          <div class="row">
-            <button class="btn" type="button" id="hero-spin">Spin a line</button>
-            <a class="btn btn--ghost" href="#tunes">Open the jukebox</a>
-          </div>
-          <p class="scrap" id="scrap">
-            Today's scrap: if a saying has weather in it, somebody is probably sneezing.
-          </p>
-        </div>
-
+    <a class="skip" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-bar">
+        <a class="brand" href="index.html">R<span>o</span>T<span>h</span>G<span>o</span></a>
         <div class="mascot-wrap">
           <div class="halo" aria-hidden="true"></div>
           <button class="mascot" id="mascot" type="button" aria-label="A round yellow mascot. Press for a remark.">
@@ -73,399 +38,36 @@
                   <ellipse cx="78" cy="92" rx="3" ry="3" fill="#fffaf2" />
                   <ellipse cx="126" cy="92" rx="3" ry="3" fill="#fffaf2" />
                 </g>
-                <path
-                  d="M76 124c8 16 40 16 48 0"
-                  fill="none"
-                  stroke="#1c1915"
-                  stroke-width="4"
-                  stroke-linecap="round"
-                />
+                <path d="M76 124c8 16 40 16 48 0" fill="none" stroke="#1c1915" stroke-width="4" stroke-linecap="round" />
               </g>
             </svg>
           </button>
           <p class="speech" id="speech" hidden></p>
         </div>
-      </section>
-
-      <section class="band band--sun" id="lines">
-        <div class="wrap">
-          <aside class="card side-card tour-lead">
-            <p class="kicker">A five-minute tour</p>
-            <ol class="tour">
-              <li>Spin a line when the room goes quiet.</li>
-              <li>Flip a saying if you want the picture and the point.</li>
-              <li>Play a tune, then bother the marbles.</li>
-            </ol>
-            <p class="stamp">Admit one</p>
-          </aside>
-
-          <p class="index">01</p>
-          <h2>Lines</h2>
-          <p class="lede">Short lines for when a conversation needs a sideways step.</p>
-
-          <div class="lines-layout">
-            <article class="card ticket">
-              <div class="ticket__top">
-                <p id="line-kicker">Line 01</p>
-                <p id="line-count">1 of 12</p>
-              </div>
-              <p class="line-text" id="line-text" aria-live="polite">
-                My houseplant asked for space. I gave it the windowsill, and now it only waves when the sun is watching.
-              </p>
-              <div class="row">
-                <button class="btn btn--red" type="button" id="next-line">Another line</button>
-                <button class="btn btn--ghost" type="button" id="copy-line">Copy line</button>
-              </div>
-            </article>
+      </div>
+    </header>
+    <main>
+      <div class="home wrap" id="content">
+        <section class="home-board">
+          <div class="quote-box">
+            <blockquote>
+              <p id="quote">If a saying has weather in it, somebody is probably sneezing.</p>
+            </blockquote>
           </div>
-
-          <details class="drawer">
-            <summary>Browse every line</summary>
-            <ol id="line-source">
-              <li>My houseplant asked for space. I gave it the windowsill, and now it only waves when the sun is watching.</li>
-              <li>I started a band called Free Snacks. We still have no fans, but rehearsals are very well attended.</li>
-              <li>The stairs and I are in a long-term relationship. It is a lot of ups and downs, and neither of us will move out.</li>
-              <li>I told my mirror to be honest. It has not been invited to another meeting.</li>
-              <li>My calendar is optimistic. It keeps setting aside days as if I have that kind of inventory.</li>
-              <li>I asked the toaster for a raise. It said the work was already popping.</li>
-              <li>Parallel lines bought matching jackets. They still refuse to meet, but the photos look great.</li>
-              <li>I left a note for Future Me. Present Me read it early and felt personally addressed.</li>
-              <li>The fridge light and I only meet during a crisis. We keep it professional.</li>
-              <li>I gave my umbrella a day off. It rained out of spite, which I respect.</li>
-              <li>My socks entered the laundry as a pair and came out as a support group.</li>
-              <li>I asked the clock for more time. It said I was already getting sixty minutes every hour.</li>
-            </ol>
-          </details>
-        </div>
-      </section>
-
-      <section class="band" id="idioms">
-        <div class="wrap">
-          <p class="index">02</p>
-          <h2>Idioms</h2>
-          <p class="lede">
-            Familiar sayings, with the picture that shows up before the meaning does. Press a card to flip it.
-          </p>
-
-          <div class="idiom-grid">
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
-              <div class="idiom__inner">
-                <div class="idiom__face idiom__face--front">
-                  <p class="kicker">Saying</p>
-                  <h3>Spill the beans</h3>
-                  <div class="idiom__art">
-                    <svg role="img" aria-label="A tipped jar with beans falling out" viewBox="0 0 160 90">
-                      <g transform="rotate(-28 110 42)">
-                        <rect x="90" y="20" width="36" height="46" rx="6" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
-                        <path d="M90 32h36" fill="none" stroke="#1c1915" stroke-width="3" />
-                        <rect x="99" y="12" width="18" height="10" rx="2" fill="#2457e6" stroke="#1c1915" stroke-width="3" />
-                      </g>
-                      <circle cx="46" cy="72" r="7" fill="#c42b22" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="66" cy="78" r="5.5" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="28" cy="78" r="4.5" fill="#1e8c56" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="84" cy="66" r="4" fill="#6d4aff" stroke="#1c1915" stroke-width="3" />
-                    </svg>
-                  </div>
-                  <p class="hint">Show the meaning</p>
-                </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">To give away a secret, usually before you meant to.</p>
-                  <p class="example">She spilled the beans about the surprise picnic before the basket was even packed.</p>
-                  <p class="hint">Show the picture</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
-              <div class="idiom__inner">
-                <div class="idiom__face idiom__face--front">
-                  <p class="kicker">Saying</p>
-                  <h3>Piece of cake</h3>
-                  <div class="idiom__art">
-                    <svg role="img" aria-label="A slice of cake with a cherry" viewBox="0 0 160 90">
-                      <path d="M28 72 L80 20 L132 72 Z" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
-                      <path d="M44 58c12-10 20-10 32 0s22 10 34 0" fill="none" stroke="#c42b22" stroke-width="3" stroke-linecap="round" />
-                      <circle cx="80" cy="18" r="7" fill="#c42b22" stroke="#1c1915" stroke-width="3" />
-                      <path d="M80 10c2-7 8-6 9-1" fill="none" stroke="#1e8c56" stroke-width="3" stroke-linecap="round" />
-                    </svg>
-                  </div>
-                  <p class="hint">Show the meaning</p>
-                </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">Something easy, the sort of task that barely needs both hands.</p>
-                  <p class="example">The first puzzle was a piece of cake. The second one had opinions.</p>
-                  <p class="hint">Show the picture</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
-              <div class="idiom__inner">
-                <div class="idiom__face idiom__face--front">
-                  <p class="kicker">Saying</p>
-                  <h3>Under the weather</h3>
-                  <div class="idiom__art">
-                    <svg role="img" aria-label="A cloud raining beside a small person" viewBox="0 0 160 90">
-                      <ellipse cx="70" cy="34" rx="26" ry="16" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
-                      <ellipse cx="50" cy="38" rx="16" ry="12" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
-                      <ellipse cx="92" cy="38" rx="18" ry="13" fill="#d9e6ff" stroke="#1c1915" stroke-width="3" />
-                      <path d="M46 58 L40 74 M64 56 L58 74 M84 58 L78 74" fill="none" stroke="#2457e6" stroke-width="3" stroke-linecap="round" />
-                      <circle cx="126" cy="58" r="8" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
-                      <path d="M126 66 v14 M118 76 h16" fill="none" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
-                    </svg>
-                  </div>
-                  <p class="hint">Show the meaning</p>
-                </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">Feeling unwell, and not in the mood for a parade.</p>
-                  <p class="example">He stayed in, under the weather, with tea and a very dramatic blanket.</p>
-                  <p class="hint">Show the picture</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
-              <div class="idiom__inner">
-                <div class="idiom__face idiom__face--front">
-                  <p class="kicker">Saying</p>
-                  <h3>When pigs fly</h3>
-                  <div class="idiom__art">
-                    <svg role="img" aria-label="A pig with small wings" viewBox="0 0 160 90">
-                      <path d="M46 44c-18-16-2-30 14-12" fill="#d9e6ff" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
-                      <path d="M62 38c-2-16 20-18 16 0" fill="#fffaf2" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
-                      <ellipse cx="86" cy="54" rx="34" ry="22" fill="#ffb3c7" stroke="#1c1915" stroke-width="3" />
-                      <ellipse cx="118" cy="48" rx="16" ry="12" fill="#ffb3c7" stroke="#1c1915" stroke-width="3" />
-                      <ellipse cx="126" cy="50" rx="7" ry="5" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="124" cy="49" r="1.6" fill="#1c1915" />
-                      <circle cx="130" cy="49" r="1.6" fill="#1c1915" />
-                      <path d="M22 30 h16 M24 38 h12" fill="none" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
-                    </svg>
-                  </div>
-                  <p class="hint">Show the meaning</p>
-                </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">Something so unlikely you can schedule it next to never.</p>
-                  <p class="example">I will fold that map correctly when pigs fly, and not a minute sooner.</p>
-                  <p class="hint">Show the picture</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
-              <div class="idiom__inner">
-                <div class="idiom__face idiom__face--front">
-                  <p class="kicker">Saying</p>
-                  <h3>Break the ice</h3>
-                  <div class="idiom__art">
-                    <svg role="img" aria-label="A block of ice with a crack through it" viewBox="0 0 160 90">
-                      <path d="M24 26 h112 v42 H24 z" fill="#d9e6ff" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
-                      <path d="M68 26 l12 16 -16 10 18 16" fill="none" stroke="#2457e6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                      <path d="M40 40 h18 M108 56 h20" fill="none" stroke="#fffaf2" stroke-width="3" stroke-linecap="round" />
-                    </svg>
-                  </div>
-                  <p class="hint">Show the meaning</p>
-                </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">To say or do the thing that lets a conversation finally start.</p>
-                  <p class="example">A terrible pun is a reliable way to break the ice, and also to thin the crowd.</p>
-                  <p class="hint">Show the picture</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
-              <div class="idiom__inner">
-                <div class="idiom__face idiom__face--front">
-                  <p class="kicker">Saying</p>
-                  <h3>Burn the midnight oil</h3>
-                  <div class="idiom__art">
-                    <svg role="img" aria-label="An oil lamp burning under a moon" viewBox="0 0 160 90">
-                      <circle cx="34" cy="30" r="14" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="41" cy="27" r="11" fill="#fffaf2" />
-                      <path d="M74 72 h40 l-8 -16 H82 z" fill="#2457e6" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
-                      <path d="M88 56 h16 l-3 -12 H91 z" fill="#1c1915" />
-                      <path d="M96 44 c10 -18 -10 -18 0 -32 c8 14 8 18 0 32 z" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
-                      <circle cx="128" cy="22" r="2.2" fill="#1c1915" />
-                      <circle cx="142" cy="36" r="2.2" fill="#1c1915" />
-                      <circle cx="62" cy="18" r="2.2" fill="#1c1915" />
-                    </svg>
-                  </div>
-                  <p class="hint">Show the meaning</p>
-                </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">To keep working long after the sensible people have gone to bed.</p>
-                  <p class="example">She burned the midnight oil, and the oil, to its credit, did not complain.</p>
-                  <p class="hint">Show the picture</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
-              <div class="idiom__inner">
-                <div class="idiom__face idiom__face--front">
-                  <p class="kicker">Saying</p>
-                  <h3>Hold your horses</h3>
-                  <div class="idiom__art">
-                    <svg role="img" aria-label="A small horse politely coming to a complete stop" viewBox="0 0 160 90">
-                      <path d="M16 76 h128" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
-                      <path d="M74 68 v8 M98 68 l7 8 M106 68 l7 8" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
-                      <rect x="62" y="44" width="46" height="24" rx="10" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
-                      <path d="M78 44 h14 c0 6 -14 6 -14 0 z" fill="#c42b22" stroke="#1c1915" stroke-width="2" />
-                      <path d="M62 48 c-10 2 -14 12 -8 18" fill="none" stroke="#c42b22" stroke-width="3" stroke-linecap="round" />
-                      <path d="M92 46 L106 28 L122 28 L108 46 Z" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
-                      <ellipse cx="120" cy="28" rx="14" ry="9" transform="rotate(-15 120 28)" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
-                      <path d="M96 28 c3 -5 7 -7 9 -1 c3 -5 7 -7 9 -1" fill="none" stroke="#c42b22" stroke-width="3" stroke-linecap="round" />
-                      <path d="M110 20 l4 -8 l4 7" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
-                      <circle cx="120" cy="26" r="1.8" fill="#1c1915" />
-                      <circle cx="130" cy="29" r="1.2" fill="#1c1915" />
-                      <path d="M42 54 Q72 62 114 32" fill="none" stroke="#2457e6" stroke-width="3" stroke-linecap="round" />
-                      <rect x="18" y="49" width="16" height="10" rx="2" fill="#c42b22" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="40" cy="54" r="7" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="120" cy="75" r="2.5" fill="#fffaf2" stroke="#1c1915" stroke-width="2" />
-                      <circle cx="126" cy="72" r="1.8" fill="#fffaf2" stroke="#1c1915" stroke-width="2" />
-                    </svg>
-                  </div>
-                  <p class="hint">Show the meaning</p>
-                </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">To slow down, wait a moment, and curb your enthusiasm.</p>
-                  <p class="example">Hold your horses—we cannot leave for the picnic until someone actually finds the basket.</p>
-                  <p class="hint">Show the picture</p>
-                </div>
-              </div>
-            </article>
-
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
-              <div class="idiom__inner">
-                <div class="idiom__face idiom__face--front">
-                  <p class="kicker">Saying</p>
-                  <h3>Barking up the wrong tree</h3>
-                  <div class="idiom__art">
-                    <svg role="img" aria-label="A dog barking at the wrong tree while a cat watches from a post" viewBox="0 0 160 90">
-                      <path d="M12 76 h136" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
-                      <rect x="26" y="40" width="14" height="36" rx="2" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="24" cy="34" r="15" fill="#1e8c56" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="42" cy="28" r="18" fill="#1e8c56" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="32" cy="18" r="14" fill="#1e8c56" stroke="#1c1915" stroke-width="3" />
-                      <path d="M74 70 l-3 6 M86 70 v6" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
-                      <ellipse cx="80" cy="60" rx="15" ry="11" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
-                      <ellipse cx="68" cy="46" rx="9" ry="8" transform="rotate(-15 68 46)" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
-                      <path d="M61 46 l-7 -2 l4 5 z" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
-                      <ellipse cx="74" cy="41" rx="4.5" ry="8" transform="rotate(20 74 41)" fill="#c42b22" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="66" cy="44" r="1.6" fill="#1c1915" />
-                      <path d="M94 56 c6 -7 8 -14 5 -18" fill="none" stroke="#ffd84d" stroke-width="3" stroke-linecap="round" />
-                      <path d="M50 40 c-3 3 -3 7 0 10 M44 36 c-4 5 -4 12 0 16" fill="none" stroke="#2457e6" stroke-width="2.5" stroke-linecap="round" />
-                      <rect x="124" y="46" width="12" height="30" rx="2" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
-                      <ellipse cx="130" cy="40" rx="9" ry="8" fill="#2457e6" stroke="#1c1915" stroke-width="3" />
-                      <circle cx="130" cy="29" r="7" fill="#2457e6" stroke="#1c1915" stroke-width="3" />
-                      <path d="M124 25 l3 -6 l3 5 M130 24 l3 -5 l3 6" fill="#2457e6" stroke="#1c1915" stroke-width="2" stroke-linejoin="round" />
-                      <path d="M127 30 c1 1 2 1 3 0 M131 30 c1 1 2 1 3 0" fill="none" stroke="#fffaf2" stroke-width="1.8" stroke-linecap="round" />
-                      <path d="M138 42 c4 5 4 12 0 16" fill="none" stroke="#2457e6" stroke-width="3" stroke-linecap="round" />
-                    </svg>
-                  </div>
-                  <p class="hint">Show the meaning</p>
-                </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">Looking in the wrong place, or pursuing a mistaken line of thought.</p>
-                  <p class="example">If you think I took the last cookie, you are barking up the wrong tree—and the jar was empty yesterday.</p>
-                  <p class="hint">Show the picture</p>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="band band--ink" id="tunes">
-        <div class="wrap">
-          <p class="index">03</p>
-          <h2>Tunes</h2>
-          <p class="lede">
-            Four original loops, written for this page and played by the browser. Nothing is streamed, and nothing is downloaded.
-          </p>
-
-          <div class="jukebox">
-            <div class="tune-list" role="group" aria-label="Tunes">
-              <button class="tune" type="button" data-tune="soda" aria-pressed="false">
-                <strong>Soda Pop</strong>
-                <span>Bright, fizzy, a little pleased with itself.</span>
-              </button>
-              <button class="tune" type="button" data-tune="window" aria-pressed="false">
-                <strong>Window Seat</strong>
-                <span>Slow enough for a long glance outside.</span>
-              </button>
-              <button class="tune" type="button" data-tune="march" aria-pressed="false">
-                <strong>Kitchen March</strong>
-                <span>A small parade between the sink and the table.</span>
-              </button>
-              <button class="tune" type="button" data-tune="moon" aria-pressed="false">
-                <strong>Paper Moon</strong>
-                <span>Soft, round, and slightly nocturnal.</span>
-              </button>
-            </div>
-
-            <div class="stage" id="stage">
-              <div class="stage__top">
-                <p class="kicker">Now playing</p>
-                <p class="now-playing" id="now-playing" aria-live="polite">The jukebox is quiet.</p>
-                <div class="notes" aria-hidden="true">
-                  <span>♪</span><span>♫</span><span>♩</span>
-                </div>
-              </div>
-              <div class="bars" id="bars" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              </div>
-              <div class="stage__controls">
-                <button class="btn" type="button" id="stop-tune" disabled>Stop</button>
-                <label class="volume" for="volume">
-                  Volume
-                  <input id="volume" type="range" min="0" max="100" value="75" />
-                </label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="band band--sky" id="motion">
-        <div class="wrap">
-          <p class="index">04</p>
-          <h2>Motion</h2>
-          <p class="lede">
-            A dish of marbles with a poor sense of personal space. Click the dish to drop another, or move across it to stir them.
-          </p>
-          <div class="dish">
-            <canvas id="dish-canvas" aria-label="Animated marble dish. Click to add a marble."></canvas>
-          </div>
-          <div class="row">
-            <button class="btn" type="button" id="handful">Drop a handful</button>
-            <button class="btn btn--ghost" type="button" id="reset-dish">Reset the dish</button>
-          </div>
-          <p class="status" id="dish-status" aria-live="polite"></p>
-        </div>
-      </section>
+          <nav class="home-tabs" aria-label="Sections">
+            <a class="home-tab" href="humors.html">Humors</a>
+            <a class="home-tab" href="idioms.html">Idioms</a>
+            <a class="home-tab" href="tunes.html">Tunes</a>
+            <a class="home-tab" href="stories.html">Stories</a>
+            <a class="home-tab" href="motion.html">Motion</a>
+          </nav>
+        </section>
+      </div>
     </main>
-
     <footer class="site-footer">
-      <div class="wrap footer__grid">
-        <div>
-          <p class="brand brand--footer">RoThGo</p>
-          <p>Jokes, idioms, little tunes, and motion. No account. No feed. Just this page.</p>
-        </div>
-        <nav class="nav" aria-label="Footer">
-          <a href="#lines">Lines</a>
-          <a href="#idioms">Idioms</a>
-          <a href="#tunes">Tunes</a>
-          <a href="#motion">Motion</a>
-        </nav>
+      <div class="wrap">
+        <p class="brand brand--footer">R<span>o</span>T<span>h</span>G<span>o</span><sup class="tm">™</sup></p>
+<p class="footer-legal">All Rights Reserved ©</p>
       </div>
     </footer>
     <script src="js/app.js"></script>

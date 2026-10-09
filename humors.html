@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3ecdf" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23ffd84d' stroke='%231c1915' stroke-width='4'/%3E%3Ccircle cx='24' cy='28' r='3.2' fill='%231c1915'/%3E%3Ccircle cx='40' cy='28' r='3.2' fill='%231c1915'/%3E%3Cpath d='M22 38c4 8 16 8 20 0' fill='none' stroke='%231c1915' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <title>Humors — RoThGo</title>
+    <meta name="description" content="Short humorous lines from RoThGo." />
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-bar">
+        <a class="brand" href="index.html">R<span>o</span>T<span>h</span>G<span>o</span></a>
+        <div class="mascot-wrap">
+          <div class="halo" aria-hidden="true"></div>
+          <button class="mascot" id="mascot" type="button" aria-label="A round yellow mascot. Press for a remark.">
+            <svg class="blob" viewBox="0 0 200 220" aria-hidden="true">
+              <ellipse cx="100" cy="198" rx="52" ry="9" fill="#1c1915" opacity="0.12" />
+              <g class="blob__body">
+                <circle cx="100" cy="104" r="74" fill="#ffd84d" stroke="#1c1915" stroke-width="4" />
+                <ellipse cx="64" cy="118" rx="12" ry="7" fill="#e07a72" />
+                <ellipse cx="136" cy="118" rx="12" ry="7" fill="#e07a72" />
+                <g class="blob__eyes">
+                  <ellipse cx="76" cy="96" rx="8" ry="10" fill="#1c1915" />
+                  <ellipse cx="124" cy="96" rx="8" ry="10" fill="#1c1915" />
+                  <ellipse cx="78" cy="92" rx="3" ry="3" fill="#fffaf2" />
+                  <ellipse cx="126" cy="92" rx="3" ry="3" fill="#fffaf2" />
+                </g>
+                <path d="M76 124c8 16 40 16 48 0" fill="none" stroke="#1c1915" stroke-width="4" stroke-linecap="round" />
+              </g>
+            </svg>
+          </button>
+          <p class="speech" id="speech" hidden></p>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="humors.html" aria-current="page">Humors</a>
+        <a href="idioms.html">Idioms</a>
+        <a href="tunes.html">Tunes</a>
+        <a href="stories.html">Stories</a>
+        <a href="motion.html">Motion</a>
+      </nav>
+    </header>
+    <main>
+      <section class="band band--sun" id="content">
+        <div class="wrap">
+
+          <h2>Humors</h2>
+          <p class="lede">Short lines for when a conversation needs a sideways step.</p>
+
+          <div class="lines-layout">
+            <article class="card ticket">
+              <div class="ticket__top">
+                <p id="line-kicker">Line 01</p>
+                <p id="line-count">1 of 12</p>
+              </div>
+              <p class="line-text" id="line-text" aria-live="polite">
+                My houseplant asked for space. I gave it the windowsill, and now it only waves when the sun is watching.
+              </p>
+              <div class="row">
+                <button class="btn btn--red" type="button" id="next-line">Another line</button>
+                <button class="btn btn--ghost" type="button" id="copy-line">Copy line</button>
+              </div>
+            </article>
+          </div>
+
+          <details class="drawer">
+            <summary>Browse every line</summary>
+            <ol id="line-source">
+              <li>My houseplant asked for space. I gave it the windowsill, and now it only waves when the sun is watching.</li>
+              <li>I started a band called Free Snacks. We still have no fans, but rehearsals are very well attended.</li>
+              <li>The stairs and I are in a long-term relationship. It is a lot of ups and downs, and neither of us will move out.</li>
+              <li>I told my mirror to be honest. It has not been invited to another meeting.</li>
+              <li>My calendar is optimistic. It keeps setting aside days as if I have that kind of inventory.</li>
+              <li>I asked the toaster for a raise. It said the work was already popping.</li>
+              <li>Parallel lines bought matching jackets. They still refuse to meet, but the photos look great.</li>
+              <li>I left a note for Future Me. Present Me read it early and felt personally addressed.</li>
+              <li>The fridge light and I only meet during a crisis. We keep it professional.</li>
+              <li>I gave my umbrella a day off. It rained out of spite, which I respect.</li>
+              <li>My socks entered the laundry as a pair and came out as a support group.</li>
+              <li>I asked the clock for more time. It said I was already getting sixty minutes every hour.</li>
+            </ol>
+          </details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="brand brand--footer">R<span>o</span>T<span>h</span>G<span>o</span><sup class="tm">™</sup></p>
+<p class="footer-legal">All Rights Reserved ©</p>
+      </div>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>

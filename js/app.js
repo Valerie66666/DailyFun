@@ -1,29 +1,30 @@
 (() => {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  initScrap();
+  initQuote();
   initLines();
   initIdioms();
   initJukebox();
   initDish();
   initMascot();
 
-  function initScrap() {
-    const scraps = [
-      "Today's scrap: if a saying has weather in it, somebody is probably sneezing.",
-      "Today's scrap: a short tune can fix a long afternoon.",
-      "Today's scrap: idioms are just jokes that got a job.",
-      "Today's scrap: marbles do not have a five-year plan.",
-      "Today's scrap: the best line is the one you repeat to a patient friend.",
-      "Today's scrap: midnight oil is a terrible beverage.",
-      "Today's scrap: if the room is quiet, flip a card.",
-      "Today's scrap: nothing on this page asks for an account, a password, or a serious face.",
+  function initQuote() {
+    const quote = document.querySelector("#quote");
+    if (!quote) return;
+    const quotes = [
+      "If a saying has weather in it, somebody is probably sneezing.",
+      "A short tune can fix a long afternoon.",
+      "Idioms are just jokes that got a job.",
+      "Marbles do not have a five-year plan.",
+      "The best line is the one you repeat to a patient friend.",
+      "Midnight oil is a terrible beverage.",
+      "If the room is quiet, flip a card.",
+      "Nothing here asks for an account, a password, or a serious face.",
     ];
     const now = new Date();
     const start = new Date(now.getFullYear(), 0, 0);
     const day = Math.floor((now - start) / 86400000);
-    const scrap = document.querySelector("#scrap");
-    if (scrap) scrap.textContent = scraps[day % scraps.length];
+    quote.textContent = quotes[day % quotes.length];
   }
 
   function initLines() {
@@ -33,7 +34,6 @@
     const count = document.querySelector("#line-count");
     const nextButton = document.querySelector("#next-line");
     const copyButton = document.querySelector("#copy-line");
-    const hero = document.querySelector("#hero-spin");
     let index = 0;
     let bag = [];
     let lock = false;
@@ -46,6 +46,8 @@
       }
       return list;
     }
+
+    if (!text || !kicker || !count || !nextButton || !copyButton || !items.length) return;
 
     function render() {
       text.textContent = items[index];
@@ -80,10 +82,6 @@
 
     render();
     nextButton.addEventListener("click", showNext);
-    hero.addEventListener("click", () => {
-      document.querySelector("#lines").scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
-      showNext();
-    });
     async function copyLine(value) {
       try {
         await navigator.clipboard.writeText(value);
@@ -181,6 +179,7 @@
     const stopButton = document.querySelector("#stop-tune");
     const volume = document.querySelector("#volume");
     const bars = [...document.querySelectorAll("#bars i")];
+    if (!stage || !nowPlaying || !stopButton || !volume || !buttons.length) return;
     let audio = null;
     let playToken = 0;
     let loopTimer = 0;
@@ -344,6 +343,7 @@
 
   function initDish() {
     const canvas = document.querySelector("#dish-canvas");
+    if (!canvas) return;
     const status = document.querySelector("#dish-status");
     const ctx = canvas.getContext("2d");
     const COLORS = ["#e23b2f", "#2457e6", "#ffd84d", "#1e8c56", "#6d4aff", "#ff8a3d", "#fffaf2"];
@@ -562,6 +562,7 @@
   function initMascot() {
     const button = document.querySelector("#mascot");
     const speech = document.querySelector("#speech");
+    if (!button || !speech) return;
     const remarks = [
       "Okay, okay. I'm awake.",
       "That tickles in a strictly circular way.",
@@ -569,6 +570,7 @@
       "Still round. Still on the clock.",
     ];
     let clicks = 0;
+    let hideTimer = 0;
     button.addEventListener("click", () => {
       clicks += 1;
       button.classList.remove("is-poked");
@@ -576,6 +578,11 @@
       button.classList.add("is-poked");
       speech.hidden = false;
       speech.textContent = remarks[(clicks - 1) % remarks.length];
+      window.clearTimeout(hideTimer);
+      hideTimer = window.setTimeout(() => {
+        button.classList.remove("is-poked");
+        speech.hidden = true;
+      }, 5000);
     });
   }
 })();

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3ecdf" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23ffd84d' stroke='%231c1915' stroke-width='4'/%3E%3Ccircle cx='24' cy='28' r='3.2' fill='%231c1915'/%3E%3Ccircle cx='40' cy='28' r='3.2' fill='%231c1915'/%3E%3Cpath d='M22 38c4 8 16 8 20 0' fill='none' stroke='%231c1915' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <title>Idioms — RoThGo</title>
+    <meta name="description" content="Familiar sayings from RoThGo, with a picture on one side and the meaning on the other." />
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-bar">
+        <a class="brand" href="index.html">R<span>o</span>T<span>h</span>G<span>o</span></a>
+        <div class="mascot-wrap">
+          <div class="halo" aria-hidden="true"></div>
+          <button class="mascot" id="mascot" type="button" aria-label="A round yellow mascot. Press for a remark.">
+            <svg class="blob" viewBox="0 0 200 220" aria-hidden="true">
+              <ellipse cx="100" cy="198" rx="52" ry="9" fill="#1c1915" opacity="0.12" />
+              <g class="blob__body">
+                <circle cx="100" cy="104" r="74" fill="#ffd84d" stroke="#1c1915" stroke-width="4" />
+                <ellipse cx="64" cy="118" rx="12" ry="7" fill="#e07a72" />
+                <ellipse cx="136" cy="118" rx="12" ry="7" fill="#e07a72" />
+                <g class="blob__eyes">
+                  <ellipse cx="76" cy="96" rx="8" ry="10" fill="#1c1915" />
+                  <ellipse cx="124" cy="96" rx="8" ry="10" fill="#1c1915" />
+                  <ellipse cx="78" cy="92" rx="3" ry="3" fill="#fffaf2" />
+                  <ellipse cx="126" cy="92" rx="3" ry="3" fill="#fffaf2" />
+                </g>
+                <path d="M76 124c8 16 40 16 48 0" fill="none" stroke="#1c1915" stroke-width="4" stroke-linecap="round" />
+              </g>
+            </svg>
+          </button>
+          <p class="speech" id="speech" hidden></p>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="humors.html">Humors</a>
+        <a href="idioms.html" aria-current="page">Idioms</a>
+        <a href="tunes.html">Tunes</a>
+        <a href="stories.html">Stories</a>
+        <a href="motion.html">Motion</a>
+      </nav>
+    </header>
+    <main>
+      <section class="band" id="content">
+        <div class="wrap">
+          <h2>Idioms</h2>
+          <p class="lede">
+            Familiar sayings, with the picture that shows up before the meaning does. Press a card to flip it.
+          </p>
+
+          <div class="idiom-grid">
+            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+              <div class="idiom__inner">
+                <div class="idiom__face idiom__face--front">
+                  <p class="kicker">Saying</p>
+                  <h3>Spill the beans</h3>
+                  <div class="idiom__art">
+                    <svg role="img" aria-label="A tipped jar with beans falling out" viewBox="0 0 160 90">
+                      <g transform="rotate(-28 110 42)">
+                        <rect x="90" y="20" width="36" height="46" rx="6" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
+                        <path d="M90 32h36" fill="none" stroke="#1c1915" stroke-width="3" />
+                        <rect x="99" y="12" width="18" height="10" rx="2" fill="#2457e6" stroke="#1c1915" stroke-width="3" />
+                      </g>
+                      <circle cx="46" cy="72" r="7" fill="#c42b22" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="66" cy="78" r="5.5" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="28" cy="78" r="4.5" fill="#1e8c56" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="84" cy="66" r="4" fill="#6d4aff" stroke="#1c1915" stroke-width="3" />
+                    </svg>
+                  </div>
+                  <p class="hint">Show the meaning</p>
+                </div>
+                <div class="idiom__face idiom__face--back" aria-hidden="true">
+                  <p class="kicker">Meaning</p>
+                  <p class="meaning">To give away a secret, usually before you meant to.</p>
+                  <p class="example">She spilled the beans about the surprise picnic before the basket was even packed.</p>
+                  <p class="hint">Show the picture</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+              <div class="idiom__inner">
+                <div class="idiom__face idiom__face--front">
+                  <p class="kicker">Saying</p>
+                  <h3>Piece of cake</h3>
+                  <div class="idiom__art">
+                    <svg role="img" aria-label="A slice of cake with a cherry" viewBox="0 0 160 90">
+                      <path d="M28 72 L80 20 L132 72 Z" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
+                      <path d="M44 58c12-10 20-10 32 0s22 10 34 0" fill="none" stroke="#c42b22" stroke-width="3" stroke-linecap="round" />
+                      <circle cx="80" cy="18" r="7" fill="#c42b22" stroke="#1c1915" stroke-width="3" />
+                      <path d="M80 10c2-7 8-6 9-1" fill="none" stroke="#1e8c56" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <p class="hint">Show the meaning</p>
+                </div>
+                <div class="idiom__face idiom__face--back" aria-hidden="true">
+                  <p class="kicker">Meaning</p>
+                  <p class="meaning">Something easy, the sort of task that barely needs both hands.</p>
+                  <p class="example">The first puzzle was a piece of cake. The second one had opinions.</p>
+                  <p class="hint">Show the picture</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+              <div class="idiom__inner">
+                <div class="idiom__face idiom__face--front">
+                  <p class="kicker">Saying</p>
+                  <h3>Under the weather</h3>
+                  <div class="idiom__art">
+                    <svg role="img" aria-label="A cloud raining beside a small person" viewBox="0 0 160 90">
+                      <ellipse cx="70" cy="34" rx="26" ry="16" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
+                      <ellipse cx="50" cy="38" rx="16" ry="12" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
+                      <ellipse cx="92" cy="38" rx="18" ry="13" fill="#d9e6ff" stroke="#1c1915" stroke-width="3" />
+                      <path d="M46 58 L40 74 M64 56 L58 74 M84 58 L78 74" fill="none" stroke="#2457e6" stroke-width="3" stroke-linecap="round" />
+                      <circle cx="126" cy="58" r="8" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
+                      <path d="M126 66 v14 M118 76 h16" fill="none" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <p class="hint">Show the meaning</p>
+                </div>
+                <div class="idiom__face idiom__face--back" aria-hidden="true">
+                  <p class="kicker">Meaning</p>
+                  <p class="meaning">Feeling unwell, and not in the mood for a parade.</p>
+                  <p class="example">He stayed in, under the weather, with tea and a very dramatic blanket.</p>
+                  <p class="hint">Show the picture</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+              <div class="idiom__inner">
+                <div class="idiom__face idiom__face--front">
+                  <p class="kicker">Saying</p>
+                  <h3>When pigs fly</h3>
+                  <div class="idiom__art">
+                    <svg role="img" aria-label="A pig with small wings" viewBox="0 0 160 90">
+                      <path d="M46 44c-18-16-2-30 14-12" fill="#d9e6ff" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
+                      <path d="M62 38c-2-16 20-18 16 0" fill="#fffaf2" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
+                      <ellipse cx="86" cy="54" rx="34" ry="22" fill="#ffb3c7" stroke="#1c1915" stroke-width="3" />
+                      <ellipse cx="118" cy="48" rx="16" ry="12" fill="#ffb3c7" stroke="#1c1915" stroke-width="3" />
+                      <ellipse cx="126" cy="50" rx="7" ry="5" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="124" cy="49" r="1.6" fill="#1c1915" />
+                      <circle cx="130" cy="49" r="1.6" fill="#1c1915" />
+                      <path d="M22 30 h16 M24 38 h12" fill="none" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <p class="hint">Show the meaning</p>
+                </div>
+                <div class="idiom__face idiom__face--back" aria-hidden="true">
+                  <p class="kicker">Meaning</p>
+                  <p class="meaning">Something so unlikely you can schedule it next to never.</p>
+                  <p class="example">I will fold that map correctly when pigs fly, and not a minute sooner.</p>
+                  <p class="hint">Show the picture</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+              <div class="idiom__inner">
+                <div class="idiom__face idiom__face--front">
+                  <p class="kicker">Saying</p>
+                  <h3>Break the ice</h3>
+                  <div class="idiom__art">
+                    <svg role="img" aria-label="A block of ice with a crack through it" viewBox="0 0 160 90">
+                      <path d="M24 26 h112 v42 H24 z" fill="#d9e6ff" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
+                      <path d="M68 26 l12 16 -16 10 18 16" fill="none" stroke="#2457e6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M40 40 h18 M108 56 h20" fill="none" stroke="#fffaf2" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <p class="hint">Show the meaning</p>
+                </div>
+                <div class="idiom__face idiom__face--back" aria-hidden="true">
+                  <p class="kicker">Meaning</p>
+                  <p class="meaning">To say or do the thing that lets a conversation finally start.</p>
+                  <p class="example">A terrible pun is a reliable way to break the ice, and also to thin the crowd.</p>
+                  <p class="hint">Show the picture</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+              <div class="idiom__inner">
+                <div class="idiom__face idiom__face--front">
+                  <p class="kicker">Saying</p>
+                  <h3>Burn the midnight oil</h3>
+                  <div class="idiom__art">
+                    <svg role="img" aria-label="An oil lamp burning under a moon" viewBox="0 0 160 90">
+                      <circle cx="34" cy="30" r="14" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="41" cy="27" r="11" fill="#fffaf2" />
+                      <path d="M74 72 h40 l-8 -16 H82 z" fill="#2457e6" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
+                      <path d="M88 56 h16 l-3 -12 H91 z" fill="#1c1915" />
+                      <path d="M96 44 c10 -18 -10 -18 0 -32 c8 14 8 18 0 32 z" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
+                      <circle cx="128" cy="22" r="2.2" fill="#1c1915" />
+                      <circle cx="142" cy="36" r="2.2" fill="#1c1915" />
+                      <circle cx="62" cy="18" r="2.2" fill="#1c1915" />
+                    </svg>
+                  </div>
+                  <p class="hint">Show the meaning</p>
+                </div>
+                <div class="idiom__face idiom__face--back" aria-hidden="true">
+                  <p class="kicker">Meaning</p>
+                  <p class="meaning">To keep working long after the sensible people have gone to bed.</p>
+                  <p class="example">She burned the midnight oil, and the oil, to its credit, did not complain.</p>
+                  <p class="hint">Show the picture</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+              <div class="idiom__inner">
+                <div class="idiom__face idiom__face--front">
+                  <p class="kicker">Saying</p>
+                  <h3>Hold your horses</h3>
+                  <div class="idiom__art">
+                    <svg role="img" aria-label="A small horse politely coming to a complete stop" viewBox="0 0 160 90">
+                      <path d="M16 76 h128" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
+                      <path d="M74 68 v8 M98 68 l7 8 M106 68 l7 8" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
+                      <rect x="62" y="44" width="46" height="24" rx="10" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
+                      <path d="M78 44 h14 c0 6 -14 6 -14 0 z" fill="#c42b22" stroke="#1c1915" stroke-width="2" />
+                      <path d="M62 48 c-10 2 -14 12 -8 18" fill="none" stroke="#c42b22" stroke-width="3" stroke-linecap="round" />
+                      <path d="M92 46 L106 28 L122 28 L108 46 Z" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
+                      <ellipse cx="120" cy="28" rx="14" ry="9" transform="rotate(-15 120 28)" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
+                      <path d="M96 28 c3 -5 7 -7 9 -1 c3 -5 7 -7 9 -1" fill="none" stroke="#c42b22" stroke-width="3" stroke-linecap="round" />
+                      <path d="M110 20 l4 -8 l4 7" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
+                      <circle cx="120" cy="26" r="1.8" fill="#1c1915" />
+                      <circle cx="130" cy="29" r="1.2" fill="#1c1915" />
+                      <path d="M42 54 Q72 62 114 32" fill="none" stroke="#2457e6" stroke-width="3" stroke-linecap="round" />
+                      <rect x="18" y="49" width="16" height="10" rx="2" fill="#c42b22" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="40" cy="54" r="7" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="120" cy="75" r="2.5" fill="#fffaf2" stroke="#1c1915" stroke-width="2" />
+                      <circle cx="126" cy="72" r="1.8" fill="#fffaf2" stroke="#1c1915" stroke-width="2" />
+                    </svg>
+                  </div>
+                  <p class="hint">Show the meaning</p>
+                </div>
+                <div class="idiom__face idiom__face--back" aria-hidden="true">
+                  <p class="kicker">Meaning</p>
+                  <p class="meaning">To slow down, wait a moment, and curb your enthusiasm.</p>
+                  <p class="example">Hold your horses—we cannot leave for the picnic until someone actually finds the basket.</p>
+                  <p class="hint">Show the picture</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+              <div class="idiom__inner">
+                <div class="idiom__face idiom__face--front">
+                  <p class="kicker">Saying</p>
+                  <h3>Barking up the wrong tree</h3>
+                  <div class="idiom__art">
+                    <svg role="img" aria-label="A dog barking at the wrong tree while a cat watches from a post" viewBox="0 0 160 90">
+                      <path d="M12 76 h136" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
+                      <rect x="26" y="40" width="14" height="36" rx="2" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="24" cy="34" r="15" fill="#1e8c56" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="42" cy="28" r="18" fill="#1e8c56" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="32" cy="18" r="14" fill="#1e8c56" stroke="#1c1915" stroke-width="3" />
+                      <path d="M74 70 l-3 6 M86 70 v6" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
+                      <ellipse cx="80" cy="60" rx="15" ry="11" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
+                      <ellipse cx="68" cy="46" rx="9" ry="8" transform="rotate(-15 68 46)" fill="#ffd84d" stroke="#1c1915" stroke-width="3" />
+                      <path d="M61 46 l-7 -2 l4 5 z" fill="#ffd84d" stroke="#1c1915" stroke-width="3" stroke-linejoin="round" />
+                      <ellipse cx="74" cy="41" rx="4.5" ry="8" transform="rotate(20 74 41)" fill="#c42b22" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="66" cy="44" r="1.6" fill="#1c1915" />
+                      <path d="M94 56 c6 -7 8 -14 5 -18" fill="none" stroke="#ffd84d" stroke-width="3" stroke-linecap="round" />
+                      <path d="M50 40 c-3 3 -3 7 0 10 M44 36 c-4 5 -4 12 0 16" fill="none" stroke="#2457e6" stroke-width="2.5" stroke-linecap="round" />
+                      <rect x="124" y="46" width="12" height="30" rx="2" fill="#fffaf2" stroke="#1c1915" stroke-width="3" />
+                      <ellipse cx="130" cy="40" rx="9" ry="8" fill="#2457e6" stroke="#1c1915" stroke-width="3" />
+                      <circle cx="130" cy="29" r="7" fill="#2457e6" stroke="#1c1915" stroke-width="3" />
+                      <path d="M124 25 l3 -6 l3 5 M130 24 l3 -5 l3 6" fill="#2457e6" stroke="#1c1915" stroke-width="2" stroke-linejoin="round" />
+                      <path d="M127 30 c1 1 2 1 3 0 M131 30 c1 1 2 1 3 0" fill="none" stroke="#fffaf2" stroke-width="1.8" stroke-linecap="round" />
+                      <path d="M138 42 c4 5 4 12 0 16" fill="none" stroke="#2457e6" stroke-width="3" stroke-linecap="round" />
+                    </svg>
+                  </div>
+                  <p class="hint">Show the meaning</p>
+                </div>
+                <div class="idiom__face idiom__face--back" aria-hidden="true">
+                  <p class="kicker">Meaning</p>
+                  <p class="meaning">Looking in the wrong place, or pursuing a mistaken line of thought.</p>
+                  <p class="example">If you think I took the last cookie, you are barking up the wrong tree—and the jar was empty yesterday.</p>
+                  <p class="hint">Show the picture</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="brand brand--footer">R<span>o</span>T<span>h</span>G<span>o</span><sup class="tm">™</sup></p>
+<p class="footer-legal">All Rights Reserved ©</p>
+      </div>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>

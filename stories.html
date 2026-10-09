@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3ecdf" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23ffd84d' stroke='%231c1915' stroke-width='4'/%3E%3Ccircle cx='24' cy='28' r='3.2' fill='%231c1915'/%3E%3Ccircle cx='40' cy='28' r='3.2' fill='%231c1915'/%3E%3Cpath d='M22 38c4 8 16 8 20 0' fill='none' stroke='%231c1915' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <title>Stories — RoThGo</title>
+    <meta name="description" content="Short stories from RoThGo." />
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-bar">
+        <a class="brand" href="index.html">R<span>o</span>T<span>h</span>G<span>o</span></a>
+        <div class="mascot-wrap">
+          <div class="halo" aria-hidden="true"></div>
+          <button class="mascot" id="mascot" type="button" aria-label="A round yellow mascot. Press for a remark.">
+            <svg class="blob" viewBox="0 0 200 220" aria-hidden="true">
+              <ellipse cx="100" cy="198" rx="52" ry="9" fill="#1c1915" opacity="0.12" />
+              <g class="blob__body">
+                <circle cx="100" cy="104" r="74" fill="#ffd84d" stroke="#1c1915" stroke-width="4" />
+                <ellipse cx="64" cy="118" rx="12" ry="7" fill="#e07a72" />
+                <ellipse cx="136" cy="118" rx="12" ry="7" fill="#e07a72" />
+                <g class="blob__eyes">
+                  <ellipse cx="76" cy="96" rx="8" ry="10" fill="#1c1915" />
+                  <ellipse cx="124" cy="96" rx="8" ry="10" fill="#1c1915" />
+                  <ellipse cx="78" cy="92" rx="3" ry="3" fill="#fffaf2" />
+                  <ellipse cx="126" cy="92" rx="3" ry="3" fill="#fffaf2" />
+                </g>
+                <path d="M76 124c8 16 40 16 48 0" fill="none" stroke="#1c1915" stroke-width="4" stroke-linecap="round" />
+              </g>
+            </svg>
+          </button>
+          <p class="speech" id="speech" hidden></p>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="humors.html">Humors</a>
+        <a href="idioms.html">Idioms</a>
+        <a href="tunes.html">Tunes</a>
+        <a href="stories.html" aria-current="page">Stories</a>
+        <a href="motion.html">Motion</a>
+      </nav>
+    </header>
+    <main>
+      <section class="band" id="content">
+        <div class="wrap">
+          <h2>Stories</h2>
+          <p class="lede">Short stories that take the long way around a small idea.</p>
+          <div class="story-list">
+            <article class="card story">
+              <p class="kicker">A very short story</p>
+              <h3>The Umbrella's Day Off</h3>
+              <p>I gave my umbrella a day off, which it accepted with the dignity of someone who had been carrying other people for years.</p>
+              <p>It rained out of spite. The umbrella stayed in the stand and watched the sidewalk darken, then sent me out with a newspaper and a look that said this was a teaching moment.</p>
+              <p>By evening the newspaper had become a small, honest hat. The umbrella took Monday, and we agreed not to discuss it.</p>
+            </article>
+            <article class="card story">
+              <p class="kicker">A very short story</p>
+              <h3>Office Hours</h3>
+              <p>My houseplant asked for space. I gave it the windowsill, and it used the promotion to ignore me unless the sun was in the room.</p>
+              <p>On Thursday it called a meeting. The agenda was light, water, and a complaint about the neighbor's cat, who had been making faces through the glass.</p>
+              <p>I took notes. The plant adjourned itself toward the light and left me with the action items, which was, I realized, the entire job.</p>
+            </article>
+            <article class="card story">
+              <p class="kicker">A very short story</p>
+              <h3>Free Snacks</h3>
+              <p>I started a band called Free Snacks. We still have no fans, but rehearsals are very well attended, mostly by people who heard about the crackers.</p>
+              <p>Our drummer keeps time with a wooden spoon. Our singer knows three songs and one apology. Between numbers, someone always asks whether the snacks are actually free, and someone always says that is the name of the band, which answers a different question.</p>
+              <p>Last week a stranger stayed for the whole set and left without a cracker. We have decided to call that a fan, and to rehearse again on Tuesday.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="brand brand--footer">R<span>o</span>T<span>h</span>G<span>o</span><sup class="tm">™</sup></p>
+<p class="footer-legal">All Rights Reserved ©</p>
+      </div>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>

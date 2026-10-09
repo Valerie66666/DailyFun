@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3ecdf" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23ffd84d' stroke='%231c1915' stroke-width='4'/%3E%3Ccircle cx='24' cy='28' r='3.2' fill='%231c1915'/%3E%3Ccircle cx='40' cy='28' r='3.2' fill='%231c1915'/%3E%3Cpath d='M22 38c4 8 16 8 20 0' fill='none' stroke='%231c1915' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+    <title>Motion — RoThGo</title>
+    <meta name="description" content="A dish of restless marbles on RoThGo." />
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <header class="site-header">
+      <div class="header-bar">
+        <a class="brand" href="index.html">R<span>o</span>T<span>h</span>G<span>o</span></a>
+        <div class="mascot-wrap">
+          <div class="halo" aria-hidden="true"></div>
+          <button class="mascot" id="mascot" type="button" aria-label="A round yellow mascot. Press for a remark.">
+            <svg class="blob" viewBox="0 0 200 220" aria-hidden="true">
+              <ellipse cx="100" cy="198" rx="52" ry="9" fill="#1c1915" opacity="0.12" />
+              <g class="blob__body">
+                <circle cx="100" cy="104" r="74" fill="#ffd84d" stroke="#1c1915" stroke-width="4" />
+                <ellipse cx="64" cy="118" rx="12" ry="7" fill="#e07a72" />
+                <ellipse cx="136" cy="118" rx="12" ry="7" fill="#e07a72" />
+                <g class="blob__eyes">
+                  <ellipse cx="76" cy="96" rx="8" ry="10" fill="#1c1915" />
+                  <ellipse cx="124" cy="96" rx="8" ry="10" fill="#1c1915" />
+                  <ellipse cx="78" cy="92" rx="3" ry="3" fill="#fffaf2" />
+                  <ellipse cx="126" cy="92" rx="3" ry="3" fill="#fffaf2" />
+                </g>
+                <path d="M76 124c8 16 40 16 48 0" fill="none" stroke="#1c1915" stroke-width="4" stroke-linecap="round" />
+              </g>
+            </svg>
+          </button>
+          <p class="speech" id="speech" hidden></p>
+        </div>
+      </div>
+      <nav class="tabs" aria-label="Sections">
+        <a href="humors.html">Humors</a>
+        <a href="idioms.html">Idioms</a>
+        <a href="tunes.html">Tunes</a>
+        <a href="stories.html">Stories</a>
+        <a href="motion.html" aria-current="page">Motion</a>
+      </nav>
+    </header>
+    <main>
+
+      <noscript>
+        <p class="noscript wrap">JavaScript is off, so the marble dish will sit quietly.</p>
+      </noscript>
+      <section class="band band--sky" id="content">
+        <div class="wrap">
+          <h2>Motion</h2>
+          <p class="lede">
+            A dish of marbles with a poor sense of personal space. Click the dish to drop another, or move across it to stir them.
+          </p>
+          <div class="dish">
+            <canvas id="dish-canvas" aria-label="Animated marble dish. Click to add a marble."></canvas>
+          </div>
+          <div class="row">
+            <button class="btn" type="button" id="handful">Drop a handful</button>
+            <button class="btn btn--ghost" type="button" id="reset-dish">Reset the dish</button>
+          </div>
+          <p class="status" id="dish-status" aria-live="polite"></p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap">
+        <p class="brand brand--footer">R<span>o</span>T<span>h</span>G<span>o</span><sup class="tm">™</sup></p>
+<p class="footer-legal">All Rights Reserved ©</p>
+      </div>
+    </footer>
+    <script src="js/app.js"></script>
+  </body>
+</html>
