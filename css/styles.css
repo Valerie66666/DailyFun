@@ -664,6 +664,18 @@ h2 {
   perspective: 1100px;
 }
 
+.idiom--snug {
+  container-type: inline-size;
+}
+
+@container (max-width: 280px) {
+  .idiom--snug .example {
+    margin-top: 0.4rem;
+    font-size: 0.98rem;
+    line-height: 1.28;
+  }
+}
+
 .idiom__inner {
   display: grid;
   transform: rotateY(0);
