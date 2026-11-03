@@ -125,20 +125,39 @@
     document.querySelectorAll(".idiom").forEach((card) => {
       const front = card.querySelector(".idiom__face--front");
       const back = card.querySelector(".idiom__face--back");
+      const panels = [...card.querySelectorAll(".idiom__panel")];
+      const backButton = card.querySelector(".idiom__back");
 
-      function toggle() {
-        const flipped = card.classList.toggle("is-flipped");
-        card.setAttribute("aria-pressed", String(flipped));
-        front.setAttribute("aria-hidden", String(flipped));
-        back.setAttribute("aria-hidden", String(!flipped));
+      function showMeaning(lang) {
+        panels.forEach((panel) => {
+          panel.hidden = panel.dataset.lang !== lang;
+        });
+        card.classList.add("is-flipped");
+        front.inert = true;
+        back.inert = false;
+        front.setAttribute("aria-hidden", "true");
+        back.setAttribute("aria-hidden", "false");
+        backButton.focus();
       }
 
-      card.addEventListener("click", toggle);
-      card.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" || event.key === " ") {
-          event.preventDefault();
-          toggle();
-        }
+      function showPicture(returnTo) {
+        card.classList.remove("is-flipped");
+        front.inert = false;
+        back.inert = true;
+        front.setAttribute("aria-hidden", "false");
+        back.setAttribute("aria-hidden", "true");
+        if (returnTo) returnTo.focus();
+      }
+
+      card.querySelectorAll(".idiom__lang").forEach((link) => {
+        link.addEventListener("click", () => {
+          showMeaning(link.dataset.lang);
+        });
+      });
+
+      backButton.addEventListener("click", () => {
+        const lang = panels.find((panel) => !panel.hidden)?.dataset.lang || "en";
+        showPicture(card.querySelector(`.idiom__lang[data-lang="${lang}"]`));
       });
     });
   }

@@ -16,7 +16,7 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%23ffd84d' stroke='%231c1915' stroke-width='4'/%3E%3Ccircle cx='24' cy='28' r='3.2' fill='%231c1915'/%3E%3Ccircle cx='40' cy='28' r='3.2' fill='%231c1915'/%3E%3Cpath d='M22 38c4 8 16 8 20 0' fill='none' stroke='%231c1915' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E"
     />
     <title>Idioms — RoThGo</title>
-    <meta name="description" content="Familiar sayings from RoThGo, with a picture on one side and the meaning on the other." />
+    <meta name="description" content="Familiar sayings from RoThGo, with the meaning in English or in Chinese." />
   </head>
   <body>
     <a class="skip" href="#content">Skip to content</a>
@@ -58,11 +58,11 @@
         <div class="wrap">
           <h2>Idioms</h2>
           <p class="lede">
-            Familiar sayings, with the picture that shows up before the meaning does. Press a card to flip it.
+            Familiar sayings, picture first. Open the meaning in English or in Chinese.
           </p>
 
           <div class="idiom-grid">
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+            <article class="idiom">
               <div class="idiom__inner">
                 <div class="idiom__face idiom__face--front">
                   <p class="kicker">Saying</p>
@@ -80,18 +80,28 @@
                       <circle cx="84" cy="66" r="4" fill="#6d4aff" stroke="#1c1915" stroke-width="3" />
                     </svg>
                   </div>
-                  <p class="hint">Show the meaning</p>
+                  <div class="idiom__langs">
+                    <button class="idiom__lang" type="button" data-lang="en">Meaning in English</button>
+                    <button class="idiom__lang" type="button" data-lang="zh">Meaning in Chinese</button>
+                  </div>
                 </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">To give away a secret, usually before you meant to.</p>
-                  <p class="example">She spilled the beans about the surprise picnic before the basket was even packed.</p>
-                  <p class="hint">Show the picture</p>
+                <div class="idiom__face idiom__face--back" aria-hidden="true" inert>
+                  <div class="idiom__panel" data-lang="en">
+                    <p class="kicker">Meaning</p>
+                    <p class="meaning">To give away a secret, usually before you meant to.</p>
+                    <p class="example">She spilled the beans about the surprise picnic before the basket was even packed.</p>
+                  </div>
+                  <div class="idiom__panel" data-lang="zh" lang="zh" hidden>
+                    <p class="kicker">意思</p>
+                    <p class="meaning">把秘密说漏了，而且常常是还没打算说的时候。</p>
+                    <p class="example">野餐篮子还没装好，她就把惊喜野餐的事说漏嘴了。</p>
+                  </div>
+                  <button class="idiom__back" type="button">Show the picture</button>
                 </div>
               </div>
             </article>
 
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+            <article class="idiom">
               <div class="idiom__inner">
                 <div class="idiom__face idiom__face--front">
                   <p class="kicker">Saying</p>
@@ -104,18 +114,28 @@
                       <path d="M80 10c2-7 8-6 9-1" fill="none" stroke="#1e8c56" stroke-width="3" stroke-linecap="round" />
                     </svg>
                   </div>
-                  <p class="hint">Show the meaning</p>
+                  <div class="idiom__langs">
+                    <button class="idiom__lang" type="button" data-lang="en">Meaning in English</button>
+                    <button class="idiom__lang" type="button" data-lang="zh">Meaning in Chinese</button>
+                  </div>
                 </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">Something easy, the sort of task that barely needs both hands.</p>
-                  <p class="example">The first puzzle was a piece of cake. The second one had opinions.</p>
-                  <p class="hint">Show the picture</p>
+                <div class="idiom__face idiom__face--back" aria-hidden="true" inert>
+                  <div class="idiom__panel" data-lang="en">
+                    <p class="kicker">Meaning</p>
+                    <p class="meaning">Something easy, the sort of task that barely needs both hands.</p>
+                    <p class="example">The first puzzle was a piece of cake. The second one had opinions.</p>
+                  </div>
+                  <div class="idiom__panel" data-lang="zh" lang="zh" hidden>
+                    <p class="kicker">意思</p>
+                    <p class="meaning">形容事情很容易，轻松就能做成。</p>
+                    <p class="example">第一道谜题不过是小菜一碟。第二道却很有自己的主意。</p>
+                  </div>
+                  <button class="idiom__back" type="button">Show the picture</button>
                 </div>
               </div>
             </article>
 
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+            <article class="idiom">
               <div class="idiom__inner">
                 <div class="idiom__face idiom__face--front">
                   <p class="kicker">Saying</p>
@@ -130,18 +150,28 @@
                       <path d="M126 66 v14 M118 76 h16" fill="none" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
                     </svg>
                   </div>
-                  <p class="hint">Show the meaning</p>
+                  <div class="idiom__langs">
+                    <button class="idiom__lang" type="button" data-lang="en">Meaning in English</button>
+                    <button class="idiom__lang" type="button" data-lang="zh">Meaning in Chinese</button>
+                  </div>
                 </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">Feeling unwell, and not in the mood for a parade.</p>
-                  <p class="example">He stayed in, under the weather, with tea and a very dramatic blanket.</p>
-                  <p class="hint">Show the picture</p>
+                <div class="idiom__face idiom__face--back" aria-hidden="true" inert>
+                  <div class="idiom__panel" data-lang="en">
+                    <p class="kicker">Meaning</p>
+                    <p class="meaning">Feeling unwell, and not in the mood for a parade.</p>
+                    <p class="example">He stayed in, under the weather, with tea and a very dramatic blanket.</p>
+                  </div>
+                  <div class="idiom__panel" data-lang="zh" lang="zh" hidden>
+                    <p class="kicker">意思</p>
+                    <p class="meaning">身体不舒服，也没心情出去凑热闹。</p>
+                    <p class="example">他不舒服，留在家里，捧着茶，裹着一条格外夸张的毯子。</p>
+                  </div>
+                  <button class="idiom__back" type="button">Show the picture</button>
                 </div>
               </div>
             </article>
 
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+            <article class="idiom">
               <div class="idiom__inner">
                 <div class="idiom__face idiom__face--front">
                   <p class="kicker">Saying</p>
@@ -158,18 +188,28 @@
                       <path d="M22 30 h16 M24 38 h12" fill="none" stroke="#1c1915" stroke-width="3" stroke-linecap="round" />
                     </svg>
                   </div>
-                  <p class="hint">Show the meaning</p>
+                  <div class="idiom__langs">
+                    <button class="idiom__lang" type="button" data-lang="en">Meaning in English</button>
+                    <button class="idiom__lang" type="button" data-lang="zh">Meaning in Chinese</button>
+                  </div>
                 </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">Something so unlikely you can schedule it next to never.</p>
-                  <p class="example">I will fold that map correctly when pigs fly, and not a minute sooner.</p>
-                  <p class="hint">Show the picture</p>
+                <div class="idiom__face idiom__face--back" aria-hidden="true" inert>
+                  <div class="idiom__panel" data-lang="en">
+                    <p class="kicker">Meaning</p>
+                    <p class="meaning">Something so unlikely you can schedule it next to never.</p>
+                    <p class="example">I will fold that map correctly when pigs fly, and not a minute sooner.</p>
+                  </div>
+                  <div class="idiom__panel" data-lang="zh" lang="zh" hidden>
+                    <p class="kicker">意思</p>
+                    <p class="meaning">形容根本不可能发生的事。</p>
+                    <p class="example">除非猪会飞，我才会把那张地图折对，一分钟都不会提前。</p>
+                  </div>
+                  <button class="idiom__back" type="button">Show the picture</button>
                 </div>
               </div>
             </article>
 
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+            <article class="idiom">
               <div class="idiom__inner">
                 <div class="idiom__face idiom__face--front">
                   <p class="kicker">Saying</p>
@@ -181,18 +221,28 @@
                       <path d="M40 40 h18 M108 56 h20" fill="none" stroke="#fffaf2" stroke-width="3" stroke-linecap="round" />
                     </svg>
                   </div>
-                  <p class="hint">Show the meaning</p>
+                  <div class="idiom__langs">
+                    <button class="idiom__lang" type="button" data-lang="en">Meaning in English</button>
+                    <button class="idiom__lang" type="button" data-lang="zh">Meaning in Chinese</button>
+                  </div>
                 </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">To say or do the thing that lets a conversation finally start.</p>
-                  <p class="example">A terrible pun is a reliable way to break the ice, and also to thin the crowd.</p>
-                  <p class="hint">Show the picture</p>
+                <div class="idiom__face idiom__face--back" aria-hidden="true" inert>
+                  <div class="idiom__panel" data-lang="en">
+                    <p class="kicker">Meaning</p>
+                    <p class="meaning">To say or do the thing that lets a conversation finally start.</p>
+                    <p class="example">A terrible pun is a reliable way to break the ice, and also to thin the crowd.</p>
+                  </div>
+                  <div class="idiom__panel" data-lang="zh" lang="zh" hidden>
+                    <p class="kicker">意思</p>
+                    <p class="meaning">说一句或做一件事，让谈话总算开了头。</p>
+                    <p class="example">一个糟糕的双关语既能打破冷场，也能把人吓跑。</p>
+                  </div>
+                  <button class="idiom__back" type="button">Show the picture</button>
                 </div>
               </div>
             </article>
 
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+            <article class="idiom">
               <div class="idiom__inner">
                 <div class="idiom__face idiom__face--front">
                   <p class="kicker">Saying</p>
@@ -209,18 +259,28 @@
                       <circle cx="62" cy="18" r="2.2" fill="#1c1915" />
                     </svg>
                   </div>
-                  <p class="hint">Show the meaning</p>
+                  <div class="idiom__langs">
+                    <button class="idiom__lang" type="button" data-lang="en">Meaning in English</button>
+                    <button class="idiom__lang" type="button" data-lang="zh">Meaning in Chinese</button>
+                  </div>
                 </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">To keep working long after the sensible people have gone to bed.</p>
-                  <p class="example">She burned the midnight oil, and the oil, to its credit, did not complain.</p>
-                  <p class="hint">Show the picture</p>
+                <div class="idiom__face idiom__face--back" aria-hidden="true" inert>
+                  <div class="idiom__panel" data-lang="en">
+                    <p class="kicker">Meaning</p>
+                    <p class="meaning">To keep working long after the sensible people have gone to bed.</p>
+                    <p class="example">She burned the midnight oil, and the oil, to its credit, did not complain.</p>
+                  </div>
+                  <div class="idiom__panel" data-lang="zh" lang="zh" hidden>
+                    <p class="kicker">意思</p>
+                    <p class="meaning">别人都睡了，还在继续干活。</p>
+                    <p class="example">她开夜车开到很晚，那盏灯倒很识趣，一声没抱怨。</p>
+                  </div>
+                  <button class="idiom__back" type="button">Show the picture</button>
                 </div>
               </div>
             </article>
 
-            <article class="idiom" tabindex="0" role="button" aria-pressed="false">
+            <article class="idiom">
               <div class="idiom__inner">
                 <div class="idiom__face idiom__face--front">
                   <p class="kicker">Saying</p>
@@ -245,18 +305,28 @@
                       <circle cx="126" cy="72" r="1.8" fill="#fffaf2" stroke="#1c1915" stroke-width="2" />
                     </svg>
                   </div>
-                  <p class="hint">Show the meaning</p>
+                  <div class="idiom__langs">
+                    <button class="idiom__lang" type="button" data-lang="en">Meaning in English</button>
+                    <button class="idiom__lang" type="button" data-lang="zh">Meaning in Chinese</button>
+                  </div>
                 </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">To slow down, wait a moment, and curb your enthusiasm.</p>
-                  <p class="example">Hold your horses—we cannot leave for the picnic until someone actually finds the basket.</p>
-                  <p class="hint">Show the picture</p>
+                <div class="idiom__face idiom__face--back" aria-hidden="true" inert>
+                  <div class="idiom__panel" data-lang="en">
+                    <p class="kicker">Meaning</p>
+                    <p class="meaning">To slow down, wait a moment, and curb your enthusiasm.</p>
+                    <p class="example">Hold your horses—we cannot leave for the picnic until someone actually finds the basket.</p>
+                  </div>
+                  <div class="idiom__panel" data-lang="zh" lang="zh" hidden>
+                    <p class="kicker">意思</p>
+                    <p class="meaning">先慢下来，等一等，别那么急。</p>
+                    <p class="example">先别急——得有人找到篮子，我们才能出发去野餐。</p>
+                  </div>
+                  <button class="idiom__back" type="button">Show the picture</button>
                 </div>
               </div>
             </article>
 
-            <article class="idiom idiom--snug" tabindex="0" role="button" aria-pressed="false">
+            <article class="idiom idiom--snug">
               <div class="idiom__inner">
                 <div class="idiom__face idiom__face--front">
                   <p class="kicker">Saying</p>
@@ -284,13 +354,23 @@
                       <path d="M138 42 c4 5 4 12 0 16" fill="none" stroke="#2457e6" stroke-width="3" stroke-linecap="round" />
                     </svg>
                   </div>
-                  <p class="hint">Show the meaning</p>
+                  <div class="idiom__langs">
+                    <button class="idiom__lang" type="button" data-lang="en">Meaning in English</button>
+                    <button class="idiom__lang" type="button" data-lang="zh">Meaning in Chinese</button>
+                  </div>
                 </div>
-                <div class="idiom__face idiom__face--back" aria-hidden="true">
-                  <p class="kicker">Meaning</p>
-                  <p class="meaning">Looking in the wrong place, or pursuing a mistaken line of thought.</p>
-                  <p class="example">If you think I took the last cookie, you are barking up the wrong tree—and the jar was empty yesterday.</p>
-                  <p class="hint">Show the picture</p>
+                <div class="idiom__face idiom__face--back" aria-hidden="true" inert>
+                  <div class="idiom__panel" data-lang="en">
+                    <p class="kicker">Meaning</p>
+                    <p class="meaning">Looking in the wrong place, or pursuing a mistaken line of thought.</p>
+                    <p class="example">If you think I took the last cookie, you are barking up the wrong tree—and the jar was empty yesterday.</p>
+                  </div>
+                  <div class="idiom__panel" data-lang="zh" lang="zh" hidden>
+                    <p class="kicker">意思</p>
+                    <p class="meaning">找错了地方，或者想偏了。</p>
+                    <p class="example">要是你以为最后那块饼干是我拿的，那你就找错人了——罐子昨天就空了。</p>
+                  </div>
+                  <button class="idiom__back" type="button">Show the picture</button>
                 </div>
               </div>
             </article>

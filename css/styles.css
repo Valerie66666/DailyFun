@@ -660,7 +660,6 @@ h2 {
   background: transparent;
   color: inherit;
   text-align: left;
-  cursor: pointer;
   perspective: 1100px;
 }
 
@@ -748,8 +747,57 @@ h2 {
   text-transform: uppercase;
 }
 
+.idiom__langs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.8rem;
+}
+
+.idiom__lang,
+.idiom__back {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.idiom__back {
+  margin-top: auto;
+  padding-top: 0.8rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.idiom__panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.idiom__panel[hidden] {
+  display: none;
+}
+
+.idiom__panel[lang="zh"] .meaning,
+.idiom__panel[lang="zh"] .example {
+  font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0;
+}
+
 .idiom__face--back .kicker,
-.idiom__face--back .hint {
+.idiom__face--back .idiom__back {
   color: var(--yellow);
 }
 
