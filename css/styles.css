@@ -145,6 +145,7 @@ main {
 }
 
 .home-tabs {
+  width: 50%;
   border: 2.5px solid var(--ink);
   border-radius: 8px;
   overflow: hidden;
@@ -189,7 +190,7 @@ main {
 }
 
 .site-header .tabs {
-  width: 100%;
+  width: 50%;
   border: 2.5px solid var(--ink);
   border-radius: 8px;
   overflow: hidden;
@@ -1059,7 +1060,7 @@ h2 {
 
   .site-header .tabs,
   .site-footer .tabs {
-    width: 100%;
+    width: 50%;
     max-width: none;
   }
 
