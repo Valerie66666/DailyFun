@@ -213,7 +213,7 @@ main {
 
 .story-title {
   font-family: var(--serif);
-  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-size: 1.25em;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.1;
