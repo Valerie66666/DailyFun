@@ -949,7 +949,6 @@ h2 {
 
 .dish {
   height: 420px;
-  margin-top: 1.5rem;
   overflow: hidden;
   background: var(--ink);
   border: 2.5px solid var(--ink);
