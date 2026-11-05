@@ -188,6 +188,16 @@ main {
   background: var(--yellow);
 }
 
+.tab-face {
+  display: block;
+  width: auto;
+  height: 1.6rem;
+}
+
+.tab-face--scale {
+  height: 1.9rem;
+}
+
 .site-header .tabs {
   width: 100%;
   border: 2.5px solid var(--ink);
