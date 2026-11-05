@@ -298,7 +298,7 @@
       setPressed("");
       stage.classList.remove("is-playing");
       stopButton.disabled = true;
-      nowPlaying.textContent = "The jukebox is quiet.";
+      nowPlaying.textContent = "";
     }
 
     function arm(token, notes, when) {
@@ -325,7 +325,7 @@
       stage.classList.add("is-playing");
       stopButton.disabled = false;
       setPressed(id);
-      nowPlaying.textContent = tune.name;
+      nowPlaying.textContent = "";
       const notes = parseScore(tune.score, tune.step);
       arm(token, notes, engine.ctx.currentTime + 0.06);
     }
