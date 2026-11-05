@@ -198,6 +198,10 @@ main {
   height: 1.9rem;
 }
 
+.tab-face--dancer {
+  height: 2.4rem;
+}
+
 .site-header .tabs {
   width: 100%;
   border: 2.5px solid var(--ink);
