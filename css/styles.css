@@ -648,9 +648,8 @@ h2 {
 
 .idiom-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
-  gap: 1.15rem;
-  margin-top: 1.6rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  gap: 0.75rem;
 }
 
 .idiom {
@@ -676,6 +675,7 @@ h2 {
 
 .idiom__inner {
   display: grid;
+  position: relative;
   transform: rotateY(0);
   transform-style: preserve-3d;
   transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -689,8 +689,8 @@ h2 {
   grid-area: 1 / 1;
   display: flex;
   flex-direction: column;
-  min-height: 292px;
-  padding: 1.05rem 1.1rem 1.1rem;
+  min-height: 0;
+  padding: 0.75rem 0.8rem 0.8rem;
   background: var(--card);
   border: 2.5px solid var(--ink);
   border-radius: 18px;
@@ -700,10 +700,24 @@ h2 {
 }
 
 .idiom__face--back {
+  position: absolute;
+  inset: 0;
   transform: rotateY(180deg);
+  overflow: hidden;
   background: var(--ink);
   color: var(--paper);
   box-shadow: 6px 6px 0 var(--yellow);
+}
+
+.idiom.is-flipped .idiom__face--front {
+  position: absolute;
+  inset: 0;
+}
+
+.idiom.is-flipped .idiom__face--back {
+  position: relative;
+  inset: auto;
+  overflow: visible;
 }
 
 .idiom h3,
@@ -716,20 +730,13 @@ h2 {
 }
 
 .idiom h3 {
-  font-size: 1.65rem;
-  line-height: 1.05;
-}
-
-.idiom__art svg {
-  display: block;
-  width: 100%;
-  height: 96px;
-  margin-top: 0.35rem;
+  font-size: 1.15rem;
+  line-height: 1.15;
 }
 
 .meaning {
-  font-size: 1.35rem;
-  line-height: 1.25;
+  font-size: 1.05rem;
+  line-height: 1.3;
 }
 
 .example {
