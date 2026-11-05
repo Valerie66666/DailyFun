@@ -648,7 +648,7 @@ h2 {
 
 .idiom-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.75rem;
 }
 
@@ -659,10 +659,8 @@ h2 {
   color: inherit;
   text-align: left;
   perspective: 1100px;
-}
-
-.idiom--snug {
   container-type: inline-size;
+  height: 100%;
 }
 
 @container (max-width: 280px) {
@@ -675,6 +673,7 @@ h2 {
 
 .idiom__inner {
   display: grid;
+  height: 100%;
   position: relative;
   transform: rotateY(0);
   transform-style: preserve-3d;
@@ -732,6 +731,13 @@ h2 {
 .idiom h3 {
   font-size: 1.15rem;
   line-height: 1.15;
+  min-height: 2.3em;
+}
+
+@container (max-width: 210px) {
+  .idiom h3 {
+    min-height: 3.45em;
+  }
 }
 
 .meaning {
