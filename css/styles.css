@@ -554,7 +554,6 @@ h2 {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   gap: 1.2rem;
-  margin-top: 1.6rem;
   align-items: stretch;
 }
 
