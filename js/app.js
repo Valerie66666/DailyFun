@@ -165,30 +165,48 @@
   function initJukebox() {
     const NOTES = {
       G3: 196.0, A3: 220.0, B3: 246.94,
-      C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392.0, A4: 440.0, B4: 493.88,
-      C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, A5: 880.0,
+      C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392.0, Gsharp4: 415.3, A4: 440.0, B4: 493.88,
+      C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, Gsharp5: 830.61, A5: 880.0,
     };
 
     const TUNES = {
-      soda: {
-        name: "Soda Pop",
-        step: 0.17,
-        score: "E5 E5 . E5 C5 E5 . G5 G4 . C5 D5 E5 . . . F5 F5 . F5 E5 E5 D5 D5 C5 . G4 . C5*2 . .",
-      },
-      window: {
-        name: "Window Seat",
-        step: 0.28,
-        score: "C4 E4 G4 E4 A4 G4 E4 D4 F4 A4 C5 A4 G4 E4 D4 C4",
-      },
-      march: {
-        name: "Kitchen March",
-        step: 0.15,
-        score: "C5 C5 G4 G4 A4 A4 G4 . F4 F4 E4 E4 D4 D4 C4 .",
-      },
-      moon: {
-        name: "Paper Moon",
-        step: 0.24,
-        score: "E4 A4 C5 E5 D5 C5 B4 A4 G4 B4 D5 C5 E4 G4 A4 .",
+      night: {
+        name: "Night Minuet",
+        step: 0.312,
+        score: [
+          "A4*2 C5*2 E5*2",
+          "G5*2 F5 E5*2 D5",
+          "C5*2 E5*2 A5*2",
+          "G5*2 F5 E5*2 D5",
+          "C5*2 B4*2 A4*2",
+          "Gsharp4*2 A4 B4*2 C5",
+          "D5*2 E5 C5*2 B4",
+          "A4*6",
+          "C5*2 E5*2 A5*2",
+          "Gsharp5*2 A5 E5*2 C5",
+          "F5*2 E5*2 D5*2",
+          "C5*2 B4 A4*2 G4",
+          "F4*2 E4*2 D5*2",
+          "C5*2 B4 A4*2 Gsharp4",
+          "B4*2 E5*2 Gsharp4*2",
+          "A4*4 . .",
+          "E5*2 G5*2 B4*2",
+          "C5*2 B4 A4*2 G4",
+          "F4*2 A4*2 C5*2",
+          "B4*2 A4 G4*2 F4",
+          "E4*2 G4*2 B4*2",
+          "C5*2 D5 E5*2 D5",
+          "C5*2 B4 A4*2 Gsharp4",
+          "E5*4 . .",
+          "A4*2 C5*2 E5*2",
+          "G5*2 F5 E5*2 D5",
+          "C5*2 E5*2 A5*2",
+          "G5 F5*2 E5 D5*2",
+          "C5*2 B4*2 A4*2",
+          "Gsharp4*2 A4 B4*2 E5",
+          "D5*2 C5 B4*2 A4",
+          "A4*6",
+        ].join(" "),
       },
     };
 
