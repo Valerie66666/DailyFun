@@ -164,10 +164,21 @@
 
   function initJukebox() {
     const NOTES = {
-      G3: 196.0, A3: 220.0, B3: 246.94,
+      C3: 130.81, D3: 146.83, E3: 164.81, F3: 174.61, G3: 196.0, Gsharp3: 207.65, A3: 220.0, B3: 246.94,
       C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392.0, Gsharp4: 415.3, A4: 440.0, B4: 493.88,
       C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, Gsharp5: 830.61, A5: 880.0,
     };
+
+    const LEFT_HAND = [
+      ["A3", "C4", "E4"], ["A3", "C4", "E4"], ["A3", "C4", "E4"], ["F3", "A3", "C4"],
+      ["D3", "F3", "A3"], ["E3", "Gsharp3", "B3"], ["A3", "C4", "E4"], ["A3", "C4", "E4"],
+      ["A3", "C4", "E4"], ["E3", "Gsharp3", "B3"], ["D3", "F3", "A3"], ["A3", "C4", "E4"],
+      ["F3", "A3", "C4"], ["A3", "C4", "E4"], ["E3", "Gsharp3", "B3"], ["A3", "C4", "E4"],
+      ["E3", "G3", "B3"], ["E3", "G3", "B3"], ["F3", "A3", "C4"], ["G3", "B3", "D4"],
+      ["E3", "G3", "B3"], ["A3", "C4", "E4"], ["E3", "Gsharp3", "B3"], ["E3", "Gsharp3", "B3"],
+      ["A3", "C4", "E4"], ["F3", "A3", "C4"], ["A3", "C4", "E4"], ["D3", "F3", "A3"],
+      ["E3", "Gsharp3", "B3"], ["A3", "C4", "E4"], ["E3", "Gsharp3", "B3"], ["A3", "C4", "E4"],
+    ];
 
     const TUNES = {
       night: {
@@ -175,36 +186,36 @@
         step: 0.312,
         score: [
           "A4*2 C5*2 E5*2",
-          "G5*2 F5 E5*2 D5",
-          "C5*2 E5*2 A5*2",
-          "G5*2 F5 E5*2 D5",
-          "C5*2 B4*2 A4*2",
-          "Gsharp4*2 A4 B4*2 C5",
-          "D5*2 E5 C5*2 B4",
+          "D5*2 C5 B4*2 A4",
+          "C5*2 E5*2 G5*2",
+          "F5*2 E5 D5*2 C5",
+          "B4*2 A4 Gsharp4*2 A4",
+          "B4*2 C5 D5*2 E5",
+          "D5*2 C5 B4*2 A4",
           "A4*6",
           "C5*2 E5*2 A5*2",
-          "Gsharp5*2 A5 E5*2 C5",
-          "F5*2 E5*2 D5*2",
+          "G5*2 F5 E5*2 D5",
           "C5*2 B4 A4*2 G4",
-          "F4*2 E4*2 D5*2",
+          "F4*2 E4 D4*2 E4",
+          "F4*2 G4 A4*2 B4",
           "C5*2 B4 A4*2 Gsharp4",
-          "B4*2 E5*2 Gsharp4*2",
+          "B4*2 E5 D5*2 C5",
           "A4*4 . .",
-          "E5*2 G5*2 B4*2",
-          "C5*2 B4 A4*2 G4",
-          "F4*2 A4*2 C5*2",
+          "E5*2 D5*2 C5*2",
           "B4*2 A4 G4*2 F4",
-          "E4*2 G4*2 B4*2",
-          "C5*2 D5 E5*2 D5",
-          "C5*2 B4 A4*2 Gsharp4",
+          "E4*2 F4 G4*2 A4",
+          "B4*2 C5 D5*2 E5",
+          "D5*2 C5 B4*2 A4",
+          "Gsharp4*2 A4 B4*2 C5",
+          "D5*2 C5 B4*2 Gsharp4",
           "E5*4 . .",
           "A4*2 C5*2 E5*2",
-          "G5*2 F5 E5*2 D5",
-          "C5*2 E5*2 A5*2",
-          "G5 F5*2 E5 D5*2",
-          "C5*2 B4*2 A4*2",
-          "Gsharp4*2 A4 B4*2 E5",
           "D5*2 C5 B4*2 A4",
+          "C5*2 E5*2 G5*2",
+          "F5*2 E5 D5*2 C5",
+          "B4*2 A4 G4*2 F4",
+          "E4*2 F4 Gsharp4*2 A4",
+          "B4*2 C5 D5*2 E5",
           "A4*6",
         ].join(" "),
       },
@@ -248,45 +259,76 @@
       master.gain.value = masterLevel();
       const filter = ctx.createBiquadFilter();
       filter.type = "lowpass";
-      filter.frequency.value = 2200;
+      filter.frequency.value = 5200;
       const analyser = ctx.createAnalyser();
       analyser.fftSize = 64;
+      const length = Math.floor(ctx.sampleRate * 0.06);
+      const hammer = ctx.createBuffer(1, length, ctx.sampleRate);
+      const noise = hammer.getChannelData(0);
+      for (let i = 0; i < length; i += 1) {
+        noise[i] = (Math.random() * 2 - 1) * (1 - i / length) ** 3;
+      }
       master.connect(filter);
       filter.connect(analyser);
       analyser.connect(ctx.destination);
-      audio = { ctx, master, analyser, data: new Uint8Array(analyser.frequencyBinCount) };
+      audio = { ctx, master, analyser, hammer, data: new Uint8Array(analyser.frequencyBinCount) };
       return audio;
     }
 
-    function tone(freq, when, length, peak, type) {
-      const { ctx, master } = audio;
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, when);
-      gain.gain.setValueAtTime(0.0001, when);
-      gain.gain.exponentialRampToValueAtTime(peak, when + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001, when + length);
-      osc.connect(gain);
-      gain.connect(master);
-      osc.start(when);
-      osc.stop(when + length + 0.02);
-      active.push(osc);
-      osc.onended = () => {
-        const i = active.indexOf(osc);
+    function remember(node) {
+      active.push(node);
+      node.onended = () => {
+        const i = active.indexOf(node);
         if (i >= 0) active.splice(i, 1);
       };
     }
 
-    function schedule(notes, when) {
+    function pianoNote(freq, when, length, peak, soft) {
+      const { ctx, master, hammer } = audio;
+      const attack = soft ? 0.04 : 0.01;
+      const tail = soft ? Math.max(0.34, length * 0.4) : Math.max(0.2, length * 0.28);
+      const end = when + length + tail;
+      [1, 0.5, 0.2, 0.08].forEach((amount, partial) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        const level = peak * amount;
+        osc.type = "sine";
+        osc.frequency.setValueAtTime(freq * (partial + 1), when);
+        gain.gain.setValueAtTime(0.0001, when);
+        gain.gain.exponentialRampToValueAtTime(level, when + attack);
+        gain.gain.exponentialRampToValueAtTime(Math.max(0.0001, level * 0.42), when + attack + length * 0.55);
+        gain.gain.exponentialRampToValueAtTime(0.0001, end);
+        osc.connect(gain);
+        gain.connect(master);
+        osc.start(when);
+        osc.stop(end + 0.03);
+        remember(osc);
+      });
+      if (soft) return;
+      const tap = ctx.createBufferSource();
+      const tapGain = ctx.createGain();
+      tap.buffer = hammer;
+      tapGain.gain.setValueAtTime(peak * 0.22, when);
+      tapGain.gain.exponentialRampToValueAtTime(0.0001, when + 0.045);
+      tap.connect(tapGain);
+      tapGain.connect(master);
+      tap.start(when);
+      tap.stop(when + 0.06);
+      remember(tap);
+    }
+
+    function schedule(notes, when, step) {
       let cursor = when;
-      notes.forEach((note, i) => {
-        const length = Math.max(0.06, note.dur * 0.82);
-        if (note.freq) {
-          tone(note.freq, cursor, length, 0.2, "triangle");
-          if (i % 4 === 0) tone(note.freq / 2, cursor, Math.min(length, note.dur), 0.07, "sine");
-        }
+      notes.forEach((note) => {
+        if (note.freq) pianoNote(note.freq, cursor, note.dur * 1.05, 0.09, false);
         cursor += note.dur;
+      });
+      const bar = step * 6;
+      LEFT_HAND.forEach((chord, index) => {
+        const start = when + index * bar;
+        chord.forEach((name, voice) => {
+          pianoNote(NOTES[name], start + voice * 0.028, bar * 0.96, 0.032, true);
+        });
       });
       return cursor - when;
     }
@@ -319,13 +361,13 @@
       nowPlaying.textContent = "";
     }
 
-    function arm(token, notes, when) {
+    function arm(token, notes, when, step) {
       if (token !== playToken || !audio) return;
       const startAt = Math.max(when, audio.ctx.currentTime + 0.05);
-      const duration = schedule(notes, startAt);
+      const duration = schedule(notes, startAt, step);
       const next = startAt + duration;
       const wait = (next - audio.ctx.currentTime - 0.2) * 1000;
-      loopTimer = window.setTimeout(() => arm(token, notes, next), Math.max(40, wait));
+      loopTimer = window.setTimeout(() => arm(token, notes, next, step), Math.max(40, wait));
     }
 
     function play(id) {
@@ -345,7 +387,7 @@
       setPressed(id);
       nowPlaying.textContent = "";
       const notes = parseScore(tune.score, tune.step);
-      arm(token, notes, engine.ctx.currentTime + 0.06);
+      arm(token, notes, engine.ctx.currentTime + 0.06, tune.step);
     }
 
     function paintBars() {
