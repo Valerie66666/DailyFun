@@ -164,59 +164,84 @@
 
   function initJukebox() {
     const NOTES = {
+      C2: 65.41, D2: 73.42, E2: 82.41, F2: 87.31, G2: 98.0, Gsharp2: 103.83, A2: 110.0, B2: 123.47,
       C3: 130.81, D3: 146.83, E3: 164.81, F3: 174.61, G3: 196.0, Gsharp3: 207.65, A3: 220.0, B3: 246.94,
       C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392.0, Gsharp4: 415.3, A4: 440.0, B4: 493.88,
-      C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, Gsharp5: 830.61, A5: 880.0,
+      C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, Gsharp5: 830.61, A5: 880.0, B5: 987.77,
+      C6: 1046.5,
     };
-
-    const LEFT_HAND = [
-      ["A3", "C4", "E4"], ["A3", "C4", "E4"], ["A3", "C4", "E4"], ["F3", "A3", "C4"],
-      ["D3", "F3", "A3"], ["E3", "Gsharp3", "B3"], ["A3", "C4", "E4"], ["A3", "C4", "E4"],
-      ["A3", "C4", "E4"], ["E3", "Gsharp3", "B3"], ["D3", "F3", "A3"], ["A3", "C4", "E4"],
-      ["F3", "A3", "C4"], ["A3", "C4", "E4"], ["E3", "Gsharp3", "B3"], ["A3", "C4", "E4"],
-      ["E3", "G3", "B3"], ["E3", "G3", "B3"], ["F3", "A3", "C4"], ["G3", "B3", "D4"],
-      ["E3", "G3", "B3"], ["A3", "C4", "E4"], ["E3", "Gsharp3", "B3"], ["E3", "Gsharp3", "B3"],
-      ["A3", "C4", "E4"], ["F3", "A3", "C4"], ["A3", "C4", "E4"], ["D3", "F3", "A3"],
-      ["E3", "Gsharp3", "B3"], ["A3", "C4", "E4"], ["E3", "Gsharp3", "B3"], ["A3", "C4", "E4"],
-    ];
 
     const TUNES = {
       night: {
         name: "Night Minuet",
         step: 0.312,
         score: [
-          "A4*2 C5*2 E5*2",
-          "D5*2 C5 B4*2 A4",
-          "C5*2 E5*2 G5*2",
-          "F5*2 E5 D5*2 C5",
-          "B4*2 A4 Gsharp4*2 A4",
-          "B4*2 C5 D5*2 E5",
-          "D5*2 C5 B4*2 A4",
-          "A4*6",
-          "C5*2 E5*2 A5*2",
-          "G5*2 F5 E5*2 D5",
-          "C5*2 B4 A4*2 G4",
-          "F4*2 E4 D4*2 E4",
-          "F4*2 G4 A4*2 B4",
-          "C5*2 B4 A4*2 Gsharp4",
-          "B4*2 E5 D5*2 C5",
+          "A4 C5*2 E5*2 D5",
+          "C5*3 B4 A4*2",
+          "A4*2 B4 C5*2 E5",
+          "B4*2 Gsharp4*2 E4*2",
+          "E5*4 D5*2",
+          "C5*2 F5*3 E5",
+          "D5*2 A4*2 F4*2",
+          "E5*6",
+          "C5 E5 A5*2 G5 E5",
+          "G5*2 E5 C5*2 G4",
+          "B4*2 D5*2 G5*2",
+          "B4 E5*2 D5*2 C5",
+          "A4*2 C5 E5*2 A5",
+          "C5*2 A4 F4*2 E4",
+          "D5*3 C5*2 A4",
           "A4*4 . .",
-          "E5*2 D5*2 C5*2",
-          "B4*2 A4 G4*2 F4",
-          "E4*2 F4 G4*2 A4",
-          "B4*2 C5 D5*2 E5",
-          "D5*2 C5 B4*2 A4",
-          "Gsharp4*2 A4 B4*2 C5",
-          "D5*2 C5 B4*2 Gsharp4",
-          "E5*4 . .",
-          "A4*2 C5*2 E5*2",
-          "D5*2 C5 B4*2 A4",
-          "C5*2 E5*2 G5*2",
-          "F5*2 E5 D5*2 C5",
-          "B4*2 A4 G4*2 F4",
-          "E4*2 F4 Gsharp4*2 A4",
-          "B4*2 C5 D5*2 E5",
+          "F4*2 A4*2 C5*2",
+          "E5*2 D5 C5*2 G4",
+          "A4*2 F4*2 D5*2",
+          "E5*2 D5*2 B4*2",
+          "C5*2 A4*2 E5*2",
+          "D5*2 B4 G4*2 D4",
+          "C5*2 A4*2 F4*2",
+          "B4*2 E5*4",
+          "A4*2 E5*2 C5*2",
+          "D5*2 F5 E5*2 D5",
+          "E5*2 C6*2 G5*2",
+          "B4*2 Gsharp4 E4*2 B3",
+          "A4 C5 E5*2 A5*2",
+          "F5*2 D5*2 C5*2",
+          "B4*2 E5*2 Gsharp5*2",
           "A4*6",
+        ].join(" "),
+        left: [
+          "A2*2 E3*2 C4*2",
+          "D2*2 A3*2 F3*2",
+          "A2*2 C4*2 E3*2",
+          "E2*2 B3*2 Gsharp3*2",
+          "A2*2 E3*2 A3*2",
+          "F2*2 C3*2 A3*2",
+          "D2*2 A3*2 F3*2",
+          "E2*2 Gsharp3*2 B3*2",
+          "A2 C3 E3 A3 C4 E3",
+          "C2 E3 G3 C4 E4 G3",
+          "G2 B3 D4 G3 B3 D4",
+          "E2 Gsharp3 B3 E3 Gsharp3 B3",
+          "A2 E3 A3 C4 E4 C4",
+          "F2 A3 C4 F3 A3 C4",
+          "D2 F3 A3 D4 F4 A3",
+          "A2 E3 C4 A3 E3 A2",
+          "F2*2 F3 A3*2 C4",
+          "C2*2 G3*2 E4*2",
+          "D2*2 A2*2 F3*2",
+          "E2*2 B2*2 Gsharp3*2",
+          "A2*2 E3*2 C4*2",
+          "G2*2 D3*2 B3*2",
+          "F2*2 C3*2 A3*2",
+          "E2*2 Gsharp2*2 B2*2",
+          "A2*2 C4*2 E4*2",
+          "D2*2 F3*2 A3*2",
+          "C2*2 G3*2 E4*2",
+          "E2*2 B3*2 Gsharp3*2",
+          "A2*2 E3 C4*2 E4",
+          "F2*2 A3*2 C4*2",
+          "E2*2 Gsharp3*2 B3*2",
+          "A2*2 E3*2 A3*2",
         ].join(" "),
       },
     };
@@ -243,7 +268,7 @@
       const letters = ["C", "D", "E", "F", "G", "A", "B"];
       const sharps = { C: "Csharp", D: "Dsharp", F: "Fsharp", G: "Gsharp", A: "Asharp" };
       const whites = [];
-      for (let octave = 3; octave <= 5; octave += 1) {
+      for (let octave = 2; octave <= 5; octave += 1) {
         letters.forEach((letter) => whites.push(`${letter}${octave}`));
       }
       whites.push("C6");
@@ -354,20 +379,21 @@
       remember(tap);
     }
 
-    function schedule(notes, when, step) {
-      let cursor = when;
-      notes.forEach((note) => {
-        if (note.freq) pianoNote(note.freq, cursor, note.dur * 1.05, 0.09, false);
-        cursor += note.dur;
-      });
-      const bar = step * 6;
-      LEFT_HAND.forEach((chord, index) => {
-        const start = when + index * bar;
-        chord.forEach((name, voice) => {
-          pianoNote(NOTES[name], start + voice * 0.028, bar * 0.96, 0.032, true);
+    function schedule(melody, left, when) {
+      const hands = [
+        [melody, 0.078],
+        [left, 0.046],
+      ];
+      let duration = 0;
+      hands.forEach(([notes, peak]) => {
+        let cursor = when;
+        notes.forEach((note) => {
+          if (note.freq) pianoNote(note.freq, cursor, note.dur * 1.02, peak, false);
+          cursor += note.dur;
         });
+        duration = Math.max(duration, cursor - when);
       });
-      return cursor - when;
+      return duration;
     }
 
     function clearSound() {
@@ -399,14 +425,14 @@
       nowPlaying.textContent = "";
     }
 
-    function arm(token, notes, when, step) {
+    function arm(token, melody, left, when) {
       if (token !== playToken || !audio) return;
       const startAt = Math.max(when, audio.ctx.currentTime + 0.05);
-      const duration = schedule(notes, startAt, step);
+      const duration = schedule(melody, left, startAt);
       playback = { start: startAt, duration };
       const next = startAt + duration;
       const wait = (next - audio.ctx.currentTime - 0.2) * 1000;
-      loopTimer = window.setTimeout(() => arm(token, notes, next, step), Math.max(40, wait));
+      loopTimer = window.setTimeout(() => arm(token, melody, left, next), Math.max(40, wait));
     }
 
     function play(id) {
@@ -425,23 +451,19 @@
       stopButton.disabled = false;
       setPressed(id);
       nowPlaying.textContent = "";
-      const notes = parseScore(tune.score, tune.step);
-      events = noteEvents(notes, tune.step);
-      arm(token, notes, engine.ctx.currentTime + 0.06, tune.step);
+      const melody = parseScore(tune.score, tune.step);
+      const left = parseScore(tune.left, tune.step);
+      events = noteEvents(melody, left);
+      arm(token, melody, left, engine.ctx.currentTime + 0.06);
     }
 
-    function noteEvents(notes, step) {
+    function noteEvents(melody, left) {
       const timeline = [];
-      let cursor = 0;
-      notes.forEach((note) => {
-        if (note.name) timeline.push({ name: note.name, start: cursor, end: cursor + note.dur * 1.05 });
-        cursor += note.dur;
-      });
-      const bar = step * 6;
-      LEFT_HAND.forEach((chord, index) => {
-        chord.forEach((name, voice) => {
-          const start = index * bar + voice * 0.028;
-          timeline.push({ name, start, end: start + bar * 0.96 });
+      [melody, left].forEach((notes) => {
+        let cursor = 0;
+        notes.forEach((note) => {
+          if (note.name) timeline.push({ name: note.name, start: cursor, end: cursor + note.dur * 1.02 });
+          cursor += note.dur;
         });
       });
       return timeline;
