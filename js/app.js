@@ -226,23 +226,60 @@
     const nowPlaying = document.querySelector("#now-playing");
     const stopButton = document.querySelector("#stop-tune");
     const volume = document.querySelector("#volume");
-    const bars = [...document.querySelectorAll("#bars i")];
-    if (!stage || !nowPlaying || !stopButton || !volume || !buttons.length) return;
+    const keybed = document.querySelector("#keys");
+    const progress = document.querySelector("#piece-progress");
+    if (!stage || !nowPlaying || !stopButton || !volume || !keybed || !progress || !buttons.length) return;
+    const keyEls = buildKeys(keybed);
     let audio = null;
     let playToken = 0;
     let loopTimer = 0;
     let active = [];
     let raf = 0;
     let currentId = "";
+    let events = [];
+    let playback = null;
+
+    function buildKeys(bed) {
+      const letters = ["C", "D", "E", "F", "G", "A", "B"];
+      const sharps = { C: "Csharp", D: "Dsharp", F: "Fsharp", G: "Gsharp", A: "Asharp" };
+      const whites = [];
+      for (let octave = 3; octave <= 5; octave += 1) {
+        letters.forEach((letter) => whites.push(`${letter}${octave}`));
+      }
+      whites.push("C6");
+      const map = new Map();
+      whites.forEach((name, index) => {
+        const key = document.createElement("i");
+        key.className = "key key--white";
+        if (index === 0) key.classList.add("is-first");
+        if (index === whites.length - 1) key.classList.add("is-last");
+        key.dataset.note = name;
+        bed.appendChild(key);
+        map.set(name, key);
+      });
+      const blackWidth = (100 / whites.length) * 0.62;
+      whites.forEach((name, index) => {
+        const sharp = sharps[name[0]];
+        if (!sharp || index === whites.length - 1) return;
+        const key = document.createElement("i");
+        key.className = "key key--black";
+        key.dataset.note = `${sharp}${name.slice(1)}`;
+        key.style.width = `${blackWidth}%`;
+        key.style.left = `calc(${((index + 1) / whites.length) * 100}% - ${blackWidth / 2}%)`;
+        bed.appendChild(key);
+        map.set(key.dataset.note, key);
+      });
+      return map;
+    }
 
     function parseScore(score, step) {
       return score.trim().split(/\s+/).map((token) => {
         const [name, mult] = token.split("*");
         const dur = step * (Number(mult) || 1);
-        if (name === ".") return { freq: 0, dur };
+        if (name === ".") return { freq: 0, dur, name: "" };
         const freq = NOTES[name];
         if (!freq) throw new Error(`Unknown note ${name}`);
-        return { freq, dur };
+        return { freq, dur, name };
       });
     }
 
@@ -354,6 +391,7 @@
     function stop() {
       playToken += 1;
       currentId = "";
+      playback = null;
       clearSound();
       setPressed("");
       stage.classList.remove("is-playing");
@@ -365,6 +403,7 @@
       if (token !== playToken || !audio) return;
       const startAt = Math.max(when, audio.ctx.currentTime + 0.05);
       const duration = schedule(notes, startAt, step);
+      playback = { start: startAt, duration };
       const next = startAt + duration;
       const wait = (next - audio.ctx.currentTime - 0.2) * 1000;
       loopTimer = window.setTimeout(() => arm(token, notes, next, step), Math.max(40, wait));
@@ -387,21 +426,42 @@
       setPressed(id);
       nowPlaying.textContent = "";
       const notes = parseScore(tune.score, tune.step);
+      events = noteEvents(notes, tune.step);
       arm(token, notes, engine.ctx.currentTime + 0.06, tune.step);
     }
 
-    function paintBars() {
-      raf = window.requestAnimationFrame(paintBars);
-      if (!audio || !currentId) {
-        bars.forEach((bar) => {
-          bar.style.height = "8%";
+    function noteEvents(notes, step) {
+      const timeline = [];
+      let cursor = 0;
+      notes.forEach((note) => {
+        if (note.name) timeline.push({ name: note.name, start: cursor, end: cursor + note.dur * 1.05 });
+        cursor += note.dur;
+      });
+      const bar = step * 6;
+      LEFT_HAND.forEach((chord, index) => {
+        chord.forEach((name, voice) => {
+          const start = index * bar + voice * 0.028;
+          timeline.push({ name, start, end: start + bar * 0.96 });
         });
-        return;
+      });
+      return timeline;
+    }
+
+    function paintFrame() {
+      raf = window.requestAnimationFrame(paintFrame);
+      const down = new Set();
+      if (audio && currentId && playback && playback.duration > 0) {
+        const elapsed = audio.ctx.currentTime - playback.start;
+        const ratio = Math.min(1, Math.max(0, elapsed / playback.duration));
+        progress.style.width = `${ratio * 100}%`;
+        events.forEach((event) => {
+          if (elapsed >= event.start && elapsed < event.end) down.add(event.name);
+        });
+      } else {
+        progress.style.width = "0%";
       }
-      audio.analyser.getByteFrequencyData(audio.data);
-      bars.forEach((bar, i) => {
-        const value = audio.data[(i % 6) + 1] || 0;
-        bar.style.height = `${Math.max(14, (value / 255) * 100)}%`;
+      keyEls.forEach((key, name) => {
+        key.classList.toggle("is-down", down.has(name));
       });
     }
 
@@ -417,7 +477,7 @@
       if (!audio) return;
       audio.master.gain.setTargetAtTime(masterLevel(), audio.ctx.currentTime, 0.03);
     });
-    paintBars();
+    paintFrame();
   }
 
   function initDish() {

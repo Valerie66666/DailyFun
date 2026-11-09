@@ -61,28 +61,19 @@
       <section class="band band--ink" id="content">
         <div class="wrap">
           <div class="jukebox">
-            <div class="tune-list" role="group" aria-label="Tunes">
-              <button class="tune" type="button" data-tune="night" aria-pressed="false">
-                <strong>Night Minuet</strong>
-              </button>
-            </div>
-
             <div class="stage" id="stage">
               <p class="now-playing" id="now-playing" aria-live="polite"></p>
-              <div class="stage__top">
-                <div class="notes" aria-hidden="true">
-                  <span>♪</span><span>♫</span><span>♩</span>
-                </div>
-              </div>
-              <div class="bars" id="bars" aria-hidden="true">
-                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-              </div>
+              <button class="tune tune-title" type="button" data-tune="night" aria-pressed="false">Night Minuet</button>
+              <div class="keys" id="keys" aria-hidden="true"></div>
               <div class="stage__controls">
                 <button class="btn" type="button" id="stop-tune" disabled>Stop</button>
-                <label class="volume" for="volume">
-                  Volume
-                  <input id="volume" type="range" min="0" max="100" value="75" />
-                </label>
+                <div class="volume-stack">
+                  <div class="piece-progress" aria-hidden="true"><span id="piece-progress"></span></div>
+                  <label class="volume" for="volume">
+                    Volume
+                    <input id="volume" type="range" min="0" max="100" value="75" />
+                  </label>
+                </div>
               </div>
             </div>
           </div>
